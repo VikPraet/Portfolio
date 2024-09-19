@@ -1,14 +1,15 @@
-import Header from "./components/Header";
+// src/App.jsx
+import React from 'react';
+import Header from './components/Header';
+import Home from './pages/Home'; // Importing the Home component
 
 const App = () => {
-
   return (
-  <>
-    <div>
+    <>
       <Header />
-    </div>
-  </>
+      <Home /> {/* This will include your Start Section and other sections */}
+    </>
   );
 };
 
-export default App
+export default App;
