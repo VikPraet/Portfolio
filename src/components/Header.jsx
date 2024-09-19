@@ -47,7 +47,7 @@ const Header = () => {
           alt="Your Name"
           className="w-12 h-12 object-cover" // No rounding for the image
         />
-        <span className="text-2xl font-semibold hover:text-color-1 transition-colors">
+        <span className="text-2xl font-semibold hover:text-color-3 transition-colors">
           Vik Praet
         </span>
       </a>
@@ -56,28 +56,28 @@ const Header = () => {
       <nav className="hidden lg:flex space-x-8">
         <a
           href="#projects"
-          className={`relative text-lg hover:text-color-1 transition-colors duration-300 ${
-            activeSection === "#projects" ? "text-color-1" : ""
+          className={`relative text-lg hover:text-color-3 transition-colors duration-300 ${
+            activeSection === "#projects" ? "text-color-3" : ""
           }`}
           onClick={() => handleNavClick("#projects")}
         >
           Projects
           <span
-            className={`absolute left-0 bottom-[-2px] h-[2px] bg-color-1 transition-all duration-300 ${
+            className={`absolute left-0 bottom-[-2px] h-[2px] bg-color-3 transition-all duration-300 ${
               activeSection === "#projects" ? "w-full" : "w-0"
             }`}
           ></span>
         </a>
         <a
           href="#about"
-          className={`relative text-lg hover:text-color-2 transition-colors duration-300 ${
-            activeSection === "#about" ? "text-color-2" : ""
+          className={`relative text-lg hover:text-color-3 transition-colors duration-300 ${
+            activeSection === "#about" ? "text-color-3" : ""
           }`}
           onClick={() => handleNavClick("#about")}
         >
           About
           <span
-            className={`absolute left-0 bottom-[-2px] h-[2px] bg-color-2 transition-all duration-300 ${
+            className={`absolute left-0 bottom-[-2px] h-[2px] bg-color-3 transition-all duration-300 ${
               activeSection === "#about" ? "w-full" : "w-0"
             }`}
           ></span>
@@ -98,14 +98,14 @@ const Header = () => {
         </a>
         <a
           href="#additional"
-          className={`relative text-lg hover:text-color-4 transition-colors duration-300 ${
-            activeSection === "#additional" ? "text-color-4" : ""
+          className={`relative text-lg hover:text-color-3 transition-colors duration-300 ${
+            activeSection === "#additional" ? "text-color-3" : ""
           }`}
           onClick={() => handleNavClick("#additional")}
         >
           Additional
           <span
-            className={`absolute left-0 bottom-[-2px] h-[2px] bg-color-4 transition-all duration-300 ${
+            className={`absolute left-0 bottom-[-2px] h-[2px] bg-color-3 transition-all duration-300 ${
               activeSection === "#additional" ? "w-full" : "w-0"
             }`}
           ></span>
@@ -148,7 +148,7 @@ const Header = () => {
           <li>
             <a
               href="#projects"
-              className="block text-3xl hover:text-color-1 transition-colors duration-300"
+              className="block text-3xl hover:text-color-3 transition-colors duration-300"
               onClick={toggleMenu}
             >
               Projects
@@ -157,7 +157,7 @@ const Header = () => {
           <li>
             <a
               href="#about"
-              className="block text-3xl hover:text-color-2 transition-colors duration-300"
+              className="block text-3xl hover:text-color-3 transition-colors duration-300"
               onClick={toggleMenu}
             >
               About
@@ -175,7 +175,7 @@ const Header = () => {
           <li>
             <a
               href="#additional"
-              className="block text-3xl hover:text-color-4 transition-colors duration-300"
+              className="block text-3xl hover:text-color-3 transition-colors duration-300"
               onClick={toggleMenu}
             >
               Additional

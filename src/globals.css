@@ -1,4 +1,3 @@
-/* Custom animated border */
 @keyframes spin {
     from {
         --angle: 0deg;
@@ -9,45 +8,53 @@
     }
 }
 
-/* The card border effect */
-.card-animated-border {
-    position: relative;
-    z-index: 1;
-    /* Ensure content is above the border */
+/* Optional support for the conic gradient angle */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
 }
 
-.card-animated-border::before {
+.border-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Gradient border pseudo-element */
+.border-container::before,
+.border-container::after {
     content: '';
     position: absolute;
-    top: -5px;
-    /* Adjust the position slightly outside the card */
-    bottom: -5px;
-    left: -5px;
-    right: -5px;
-    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    background-image: conic-gradient(from var(--angle), #FF776F, #00000000, #00000000, #AC6AFF, #AC6AFF, #00000000, #00000000, #FF776F, #FF776F);
+    border-radius: 10px;
     z-index: -1;
-    /* Behind the card */
-    border-radius: inherit;
-    /* Match the border-radius of the card */
-    padding: 2px;
-    /* The thickness of the border */
     opacity: 0;
-    /* Invisible by default */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: scale(1);
-    /* Start with smaller scale */
+    transition: opacity 0.4s ease, transform 0.4s ease;
     animation: spin 3s linear infinite;
-    /* Continuous spinning animation */
 }
 
-.card-animated-border:hover::before {
+/* Blurred glow effect (after) */
+.border-container::after {
+    filter: blur(35px);
+    z-index: -2;
+    opacity: 0;
+}
+
+/* Hover effect: make both the gradient border and the blur visible */
+.border-container:hover::before,
+.border-container:hover::after {
     opacity: 1;
-    /* Show the gradient border on hover */
-    transform: scale(1.05);
-    /* Make it fit the card */
 }
 
-/* Adding a subtle shadow effect */
-.card-animated-border:hover {
+/* Hover effect: translate the border and shadow */
+.border-container:hover::before {
+    transform: translateY(-0.5rem) scale(1.045);
+}
+
+.border-container:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }

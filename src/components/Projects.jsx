@@ -1,13 +1,11 @@
-// src/components/ProjectsSection.jsx
 import React from 'react';
-import useOnScreen from '../hooks/UseOnScreen'; // Import the custom hook
 
 const projects = [
   {
     id: 1,
     title: 'Featured Project 1',
     description: 'January 2023',
-    image: 'https://via.placeholder.com/800x450', // Placeholder image for 16:9 aspect ratio
+    image: './src/assets/beautyShot_1.jpg', // Placeholder image for 16:9 aspect ratio
     featured: true,
   },
   {
@@ -35,7 +33,7 @@ const projects = [
     id: 5,
     title: 'Small Project 1',
     description: 'June 2022',
-    image: 'https://via.placeholder.com/800x450',
+    image: './src/assets/Apple_Calendar.png',
     featured: false,
   },
   {
@@ -56,7 +54,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-5 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-5 px-4 sm:px-6 lg:px-8 z-1">
       <div className="max-w-screen-lg mx-auto">
         {/* Section Title */}
         <h2 className="text-4xl font-bold text-left mb-10">Projects</h2>
@@ -66,20 +64,21 @@ const ProjectsSection = () => {
           {projects
             .filter((project) => project.featured)
             .map((project) => (
-              <div
-                key={project.id}
-                className="bg-n-6 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 relative" // Added hover:translate-y
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out hover:scale-110" // Image scaling
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-400">{project.description}</p>
+              <div key={project.id} className="border-container">
+                {/* Apply hover effect to the entire card */}
+                <div className="relative bg-n-6 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
+                  <div className="relative overflow-hidden">
+                    {/* Image scales when the card is hovered */}
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-400">{project.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -90,20 +89,20 @@ const ProjectsSection = () => {
           {projects
             .filter((project) => !project.featured)
             .map((project) => (
-              <div
-                key={project.id}
-                className="bg-n-6 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 relative"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out hover:scale-110"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-                  <p className="text-gray-400">{project.description}</p>
+              <div key={project.id} className="border-container">
+                <div className="relative bg-n-6 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
+                  <div className="relative overflow-hidden">
+                    {/* Image scales when the card is hovered */}
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                    <p className="text-gray-400">{project.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
