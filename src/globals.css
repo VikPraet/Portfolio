@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @keyframes spin {
     from {
         --angle: 0deg;
@@ -57,4 +61,52 @@
 
 .border-container:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Spotlight effect */
+@layer utilities {
+    .spotlight-card {
+        position: relative;
+        transition: background 0.1s ease;
+        overflow: hidden;
+        border-radius: 10px;
+        /* Add border-radius to the card */
+    }
+
+    .spotlight-card:hover {
+        --active: 1;
+    }
+
+    /* Spotlight effect behind the card */
+    .spotlight-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        /* Inherit the card's border-radius */
+        background: radial-gradient(circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+                #ff766f1c 10vmin, transparent 40vmin);
+        background-attachment: fixed;
+        opacity: var(--active, 0);
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    /* Spotlight gradient for the border */
+    .spotlight-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        /* Inherit the card's border-radius */
+        background: radial-gradient(circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+                #ff766f79 10vmin, transparent 40vmin);
+        background-attachment: fixed;
+        pointer-events: none;
+        mask: linear-gradient(white, white) 50% 0 / 100% 5px no-repeat,
+            linear-gradient(white, white) 50% 100% / 100% 5px no-repeat,
+            linear-gradient(white, white) 0 50% / 5px 100% no-repeat,
+            linear-gradient(white, white) 100% 50% / 5px 100% no-repeat;
+    }
 }

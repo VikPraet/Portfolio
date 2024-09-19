@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 
 // Data for the Software categories and Other Skills
 const softwareSkills = [
@@ -68,6 +69,22 @@ const otherSkillsCategories = [
 ];
 
 const SkillsSection = () => {
+  useEffect(() => {
+    const updateCursor = (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      document.documentElement.style.setProperty('--x', x);
+      document.documentElement.style.setProperty('--y', y);
+      console.log(`Cursor Position: ${x}, ${y}`);
+    };
+  
+    document.body.addEventListener('pointermove', updateCursor);
+  
+    return () => {
+      document.body.removeEventListener('pointermove', updateCursor);
+    };
+  }, []);
+  
   return (
     <section id="skills" className="pb-16 px-4 sm:px-6 lg:px-8 bg-n-8 text-white">
       <div className="max-w-screen-lg mx-auto">
@@ -78,7 +95,7 @@ const SkillsSection = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Column: Software Card */}
           <div className="lg:w-1/2">
-            <div className="bg-n-6 p-6 rounded-lg shadow-md h-full">
+            <div className="bg-n-6 p-6 rounded-lg shadow-md h-full spotlight-card">
               <h3 className="text-3xl font-bold mb-6">Software</h3>
               <div className="space-y-6">
                 {softwareSkills.map((category, index) => (
@@ -104,7 +121,7 @@ const SkillsSection = () => {
           <div className="lg:w-1/2">
             <div className="space-y-8">
               {otherSkillsCategories.map((category, index) => (
-                <div key={index} className="bg-n-6 p-6 rounded-lg shadow-md">
+                <div key={index} className="bg-n-6 p-6 rounded-lg shadow-md spotlight-card">
                   <h4 className="text-3xl font-semibold mb-4">{category.category}</h4>
                   <ul className="space-y-2 pl-8">
                     {category.skills.map((skill, idx) => (
