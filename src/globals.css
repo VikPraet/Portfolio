@@ -1,0 +1,53 @@
+/* Custom animated border */
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* The card border effect */
+.card-animated-border {
+    position: relative;
+    z-index: 1;
+    /* Ensure content is above the border */
+}
+
+.card-animated-border::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    /* Adjust the position slightly outside the card */
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    z-index: -1;
+    /* Behind the card */
+    border-radius: inherit;
+    /* Match the border-radius of the card */
+    padding: 2px;
+    /* The thickness of the border */
+    opacity: 0;
+    /* Invisible by default */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(1);
+    /* Start with smaller scale */
+    animation: spin 3s linear infinite;
+    /* Continuous spinning animation */
+}
+
+.card-animated-border:hover::before {
+    opacity: 1;
+    /* Show the gradient border on hover */
+    transform: scale(1.05);
+    /* Make it fit the card */
+}
+
+/* Adding a subtle shadow effect */
+.card-animated-border:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
