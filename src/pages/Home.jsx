@@ -4,6 +4,7 @@ import StartSection from '../components/StartSection';
 import ProjectsSection from '../components/Projects';
 import Divider from '../components/Divider';
 import AboutSection from '../components/About';
+import SkillsSection from '../components/Skills';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <ProjectsSection />
       <Divider/>
       <AboutSection/>
+      <SkillsSection/>
       <Divider/>
       {/* Other sections (Projects, About, Contact, etc.) will be added here later */}
     </div>
