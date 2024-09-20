@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Prism from 'prismjs'; // For syntax highlighting
-import 'prismjs/themes/prism-tomorrow.css'; // Dark theme for Prism
 
 const ProjectModal = ({ project, onClose }) => {
   const [isClosing, setIsClosing] = useState(false); // Track if modal is closing
