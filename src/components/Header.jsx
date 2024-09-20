@@ -16,14 +16,14 @@ const Header = () => {
       
       let closestSection = null;
       let minDistance = Infinity;
-  
+
       sections.forEach((section) => {
         const element = document.querySelector(section);
         const rect = element?.getBoundingClientRect();
-  
+
         if (rect) {
           const distanceFromTop = Math.abs(rect.top);
-  
+
           // Check if section is in view (top is >= 0 and within viewport)
           if (rect.top >= 0 && rect.top < window.innerHeight && distanceFromTop < minDistance) {
             minDistance = distanceFromTop;
@@ -31,12 +31,12 @@ const Header = () => {
           }
         }
       });
-  
+
       if (closestSection) {
         setActiveSection(closestSection);
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -57,7 +57,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center p-6 bg-n-8 text-n-1 fixed top-0 left-0 w-full z-50">
+    <header className="flex justify-between items-center p-6 bg-n-8 text-n-1 fixed top-0 left-0 w-full z-50 bg-opacity-75 backdrop-filter backdrop-blur-lg">
       {/* Left side: Image and Name (Both link to Projects section) */}
       <a
         href="#projects"
@@ -160,7 +160,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <nav
-        className={`lg:hidden fixed top-16 left-0 w-full bg-n-8 text-center flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
+        className={`lg:hidden fixed top-[6rem] left-0 w-full bg-n-8 text-center flex flex-col items-center justify-center transition-all duration-500 ease-in-out bg-opacity-75 backdrop-filter backdrop-blur-lg ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
