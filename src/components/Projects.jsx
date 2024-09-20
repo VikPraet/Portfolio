@@ -36,7 +36,30 @@ const projects = [
     description: 'March 2023',
     image: 'https://via.placeholder.com/800x450',
     featured: true,
-    content: [],
+    content: [
+      { type: 'text', value: 'This function calculates the factorial of a number recursively.' },
+      { 
+        type: 'code', 
+        value: `function calculateFactorial(n) {
+  // Check if the number is less than 0
+  if (n < 0) {
+    return 'Factorial is not defined for negative numbers';
+  }
+
+  // Base case: factorial of 0 is 1
+  if (n === 0) {
+    return 1;
+  }
+
+  // Recursive case: n! = n * (n - 1)!
+  return n * calculateFactorial(n - 1);
+}
+
+// Example usage:
+const number = 5;
+console.log('Factorial of', number, 'is', calculateFactorial(number));
+`    },
+    ],
   },
   {
     id: 4,

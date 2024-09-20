@@ -72,6 +72,96 @@
 }
 
 
+
+/* Modal initial enter state (hidden, scaled down) */
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.95);
+    /* Start slightly smaller */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Modal enter active state (fully visible) */
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    /* End at full size */
+}
+
+/* Modal exit initial state (visible) */
+.modal-exit {
+    opacity: 1;
+    transform: scale(1);
+    /* Start fully visible */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Modal exit active state (fading and shrinking) */
+.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.95);
+    /* Shrink and fade out */
+}
+
+/* Border wrapper - apply same scale and fade */
+.modal-border-wrapper {
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.95);
+    /* Start slightly smaller */
+    transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
+    /* Make the delay longer (0.5s) */
+}
+
+/* Border active state (scaling and fading) */
+.modal-border-wrapper.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    /* Full size */
+}
+
+.modal-border-wrapper.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.95);
+    /* Shrink and fade out */
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+    /* Fade-out earlier and faster */
+}
+
+/* Gradient border behind the modal */
+.modal-border-wrapper::before,
+.modal-border-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    background-image: conic-gradient(from var(--angle), #FF776F, #00000000, #00000000, #00000000, #AC6AFF, #AC6AFF, #00000000, #00000000, #00000000, #FF776F, #FF776F);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.4s ease 0.5s, transform 0.4s ease 0.5s;
+    /* Match delay for visibility */
+    animation: spin 10s linear infinite;
+    /* Ensure continuous spinning */
+}
+
+.modal-border-wrapper::after {
+    filter: blur(35px);
+    z-index: -2;
+    opacity: 1;
+}
+
+/* Add a minimum height to prevent shrinking when there's no content */
+.modal-content {
+    min-height: 300px;
+    /* Ensures the modal doesn't shrink if empty */
+}
+
+
+
 /* Spotlight effect */
 @layer utilities {
     .spotlight-card {
