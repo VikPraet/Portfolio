@@ -57,7 +57,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center p-6 bg-n-8 text-n-1 fixed top-0 left-0 w-full z-50 bg-opacity-75 backdrop-filter backdrop-blur-lg">
+    <header className="flex justify-between items-center p-6 bg-n-8 text-n-1 fixed top-0 left-0 w-full z-30 bg-opacity-75 backdrop-filter backdrop-blur-lg">
       {/* Left side: Image and Name (Both link to Projects section) */}
       <a
         href="#projects"

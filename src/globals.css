@@ -136,3 +136,47 @@
 .animate-pulse-slow {
     animation: pulse-slow 20s ease-in-out infinite;
 }
+
+/* Modal initial enter state (hidden, scaled down) */
+.modal-enter {
+    opacity: 0;
+    transform: scale(0.95);
+    /* Start slightly smaller */
+    /* Smooth transition */
+}
+
+/* Modal enter active state (fully visible) */
+.modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* End at full size */
+}
+
+/* Modal exit initial state (visible) */
+.modal-exit {
+    opacity: 1;
+    transform: scale(1);
+    /* Start fully visible */
+    /* Smooth transition */
+}
+
+/* Modal exit active state (fading and shrinking) */
+.modal-exit-active {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Shrink and fade out */
+}
+
+/* Background/overlay transition */
+.modal-backdrop {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* Smooth transition */
+}
+
+.modal-backdrop-active {
+    opacity: 1;
+    /* Full opacity for background */
+}

@@ -12,80 +12,105 @@ export default {
     extend: {
       colors: {
         color: {
-          1: "#AC6AFF",
-          2: "#FFC876",
-          3: "#FF776F",
-          4: "#7ADB78",
-          5: "#858DFF",
-          6: "#FF98E2",
+          1: "#AC6AFF", // Purple accent
+          2: "#FFC876", // Yellow/Gold accent
+          3: "#FF776F", // Red accent
+          4: "#7ADB78", // Green accent
+          5: "#858DFF", // Blue accent
+          6: "#FF98E2", // Pink accent
         },
         stroke: {
-          1: "#26242C",
+          1: "#26242C", // Dark stroke
         },
         n: {
-          1: "#FFFFFF",
-          2: "#CAC6DD",
-          3: "#ADA8C3",
-          4: "#757185",
-          5: "#3F3A52",
-          6: "#252134", // Dark neutral
-          7: "#15131D", // Even darker neutral
-          8: "#0E0C15",
-          9: "#474060",
-          10: "#43435C",
-          11: "#1B1B2E",
-          12: "#2E2A41",
-          13: "#6C7275",
+          1: "#FFFFFF",  // White
+          2: "#CAC6DD",  // Light neutral
+          3: "#ADA8C3",  // Mid neutral
+          4: "#757185",  // Darker neutral
+          5: "#3F3A52",  // Dark neutral
+          6: "#252134",  // Darker neutral
+          7: "#15131D",  // Even darker neutral
+          8: "#0E0C15",  // Very dark neutral (used in modals)
+          9: "#474060",  // Lighter dark for hover effects
+          10: "#43435C", // Similar to dark neutral for background
+          11: "#1B1B2E", // Near black neutral
+          12: "#2E2A41", // Neutral for cards
+          13: "#6C7275", // Mid-range neutral for text
         },
       },
       fontFamily: {
-        sans: ["var(--font-sora)", ...fontFamily.sans],
-        code: "var(--font-code)",
-        grotesk: "var(--font-grotesk)",
+        sans: ["var(--font-sora)", ...fontFamily.sans], // Main font family
+        code: "var(--font-code)", // Code blocks font
+        grotesk: "var(--font-grotesk)", // Display font
       },
       letterSpacing: {
-        tagline: ".15em",
+        tagline: ".15em", // Tagline letter spacing
       },
       spacing: {
-        0.25: "0.0625rem",
-        7.5: "1.875rem",
-        15: "3.75rem",
+        0.25: "0.0625rem",  // Tiny spacing for elements
+        7.5: "1.875rem",     // Custom spacing
+        15: "3.75rem",       // Larger spacing
       },
       opacity: {
-        15: ".15",
+        15: ".15",  // Custom opacity for background overlays
       },
       transitionDuration: {
-        DEFAULT: "200ms",
+        DEFAULT: "200ms",  // Default transition speed
+        '2000': '2000ms', // Example: a 2-second transition
+        '500': '500ms',
+        '1000': '1000ms',
       },
       transitionTimingFunction: {
-        DEFAULT: "linear",
+        DEFAULT: "linear",  // Linear transitions
       },
       zIndex: {
-        1: "1",
-        2: "2",
+        1: "1",  // Z-index for small overlays
+        2: "2",  // Z-index for modal content layers
         3: "3",
         4: "4",
-        5: "5",
+        5: "5",  // Z-index for modal and close buttons
       },
       borderWidth: {
-        DEFAULT: "0.0625rem",
+        DEFAULT: "0.0625rem",  // Border width for elements
       },
       backgroundImage: {
-        "radial-gradient": "radial-gradient(var(--tw-gradient-stops))",
-        "conic-gradient":
-          "conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",
-        "benefit-card-1": "url(assets/benefits/card-1.svg)",
+        "radial-gradient": "radial-gradient(var(--tw-gradient-stops))",  // Radial gradients
+        "conic-gradient": "conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",  // Conic gradients
+        "benefit-card-1": "url(assets/benefits/card-1.svg)",  // Card background
         "benefit-card-2": "url(assets/benefits/card-2.svg)",
         "benefit-card-3": "url(assets/benefits/card-3.svg)",
         "benefit-card-4": "url(assets/benefits/card-4.svg)",
         "benefit-card-5": "url(assets/benefits/card-5.svg)",
         "benefit-card-6": "url(assets/benefits/card-6.svg)",
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        open: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        close: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '100%': { transform: 'scale(0)', opacity: '0' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+        'open': 'open 0.3s ease-out forwards',
+        'close': 'close 0.3s ease-in forwards',
+      },      
     },
   },
   plugins: [
+    require('@tailwindcss/aspect-ratio'), // Add aspect-ratio plugin for embedded media
+
     plugin(function ({ addBase, addComponents, addUtilities }) {
       addBase({});
+
+      // Component additions for headers, buttons, and container widths
       addComponents({
         ".container": {
           "@apply max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem]":
@@ -132,9 +157,14 @@ export default {
           "@apply font-code text-xs font-bold uppercase tracking-wider": {},
         },
       });
+
+      // Utility classes for custom styles
       addUtilities({
         ".tap-highlight-color": {
           "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)",
+        },
+        ".modal-blur": {
+          "backdrop-filter": "blur(10px)",  // Utility for modal blur
         },
       });
     }),

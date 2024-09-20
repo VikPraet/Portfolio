@@ -10,7 +10,8 @@ const AboutSection = () => {
           <img 
             src="./src/assets/Profilepic.jpg" // Replace with your actual image path
             alt="Your Name"
-            className="w-full h-auto rounded-lg shadow-lg object-cover aspect-square"
+            className="w-full h-auto rounded-lg shadow-lg object-cover"
+            style={{ aspectRatio: "1 / 1" }} // Ensure the image is always square
           />
           {/* CV Button */}
           <div className="mt-4 text-center">

@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ProjectModal from './ProjectModal'; // Assuming the modal is in the same folder
 
 const projects = [
   {
     id: 1,
     title: 'Featured Project 1',
     description: 'January 2023',
-    image: './src/assets/beautyShot_1.jpg', // Placeholder image for 16:9 aspect ratio
+    image: './src/assets/beautyShot_1.jpg',
     featured: true,
+    content: [
+      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
+      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
+      { type: 'image', src: './src/assets/Apple_Calendar.png', size: 'small' },
+      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
+      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
+      { type: 'text', value: 'This is an in-depth explanation of the project...' },
+      { type: 'image', src: './src/assets/beautyShot_1.jpg', size: 'large' },
+      { type: 'code', value: 'console.log("Hello World");' },
+    ],
   },
   {
     id: 2,
@@ -14,6 +25,10 @@ const projects = [
     description: 'March 2023',
     image: 'https://via.placeholder.com/800x450',
     featured: true,
+    content: [
+      { type: 'video', src: 'https://www.youtube.com/embed/nUrmIj7-CY8?si=EiGpmRZqsrM6hYMb' },
+      { type: 'text', value: 'Watch this project demo video and learn more...' },
+    ],
   },
   {
     id: 3,
@@ -21,6 +36,7 @@ const projects = [
     description: 'March 2023',
     image: 'https://via.placeholder.com/800x450',
     featured: true,
+    content: [],
   },
   {
     id: 4,
@@ -28,6 +44,7 @@ const projects = [
     description: 'March 2023',
     image: 'https://via.placeholder.com/800x450',
     featured: true,
+    content: [],
   },
   {
     id: 5,
@@ -35,6 +52,7 @@ const projects = [
     description: 'June 2022',
     image: './src/assets/Apple_Calendar.png',
     featured: false,
+    content: [],
   },
   {
     id: 6,
@@ -42,6 +60,7 @@ const projects = [
     description: 'July 2022',
     image: 'https://via.placeholder.com/800x450',
     featured: false,
+    content: [],
   },
   {
     id: 7,
@@ -49,14 +68,24 @@ const projects = [
     description: 'July 2022',
     image: 'https://via.placeholder.com/800x450',
     featured: false,
+    content: [],
   },
 ];
 
 const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
+
   return (
     <section id="projects" className="py-5 px-4 sm:px-6 lg:px-8 z-1">
       <div className="max-w-screen-lg mx-auto">
-        {/* Section Title */}
         <h2 className="text-4xl font-bold text-left mb-10">PROJECTS</h2>
 
         {/* Featured Projects */}
@@ -64,11 +93,13 @@ const ProjectsSection = () => {
           {projects
             .filter((project) => project.featured)
             .map((project) => (
-              <div key={project.id} className="border-container">
-                {/* Apply hover effect to the entire card */}
+              <div
+                key={project.id}
+                className="border-container cursor-pointer"
+                onClick={() => openModal(project)}
+              >
                 <div className="relative bg-n-6 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
                   <div className="relative overflow-hidden">
-                    {/* Image scales when the card is hovered */}
                     <img
                       src={project.image}
                       alt={project.title}
@@ -89,10 +120,13 @@ const ProjectsSection = () => {
           {projects
             .filter((project) => !project.featured)
             .map((project) => (
-              <div key={project.id} className="border-container">
+              <div
+                key={project.id}
+                className="border-container cursor-pointer"
+                onClick={() => openModal(project)}
+              >
                 <div className="relative bg-n-6 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
                   <div className="relative overflow-hidden">
-                    {/* Image scales when the card is hovered */}
                     <img
                       src={project.image}
                       alt={project.title}
@@ -108,6 +142,9 @@ const ProjectsSection = () => {
             ))}
         </div>
       </div>
+
+      {/* Project Modal */}
+      {selectedProject && <ProjectModal project={selectedProject} onClose={closeModal} />}
     </section>
   );
 };
