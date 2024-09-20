@@ -6,6 +6,7 @@ import Divider from '../components/Divider';
 import AboutSection from '../components/About';
 import SkillsSection from '../components/Skills';
 import ContactSection from '../components/Contact';
+import AdditionalSection from '../components/Additional.jsx';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Divider/>
       <ContactSection/>
       <Divider/>
+      <AdditionalSection/>
       {/* Other sections (Projects, About, Contact, etc.) will be added here later */}
     </div>
   );

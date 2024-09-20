@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+#projects,
+#about,
+#contact,
+#additional {
+    scroll-margin-top: 120px;
+}
+
+
 @keyframes spin {
     from {
         --angle: 0deg;

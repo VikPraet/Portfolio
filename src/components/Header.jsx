@@ -13,25 +13,47 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["#projects", "#about", "#contact", "#additional"];
+      
+      let closestSection = null;
+      let minDistance = Infinity;
+  
       sections.forEach((section) => {
         const element = document.querySelector(section);
-        const offset = element?.getBoundingClientRect().top;
-        if (offset >= 0 && offset < window.innerHeight / 2) {
-          setActiveSection(section);
+        const rect = element?.getBoundingClientRect();
+  
+        if (rect) {
+          const distanceFromTop = Math.abs(rect.top);
+  
+          // Check if section is in view (top is >= 0 and within viewport)
+          if (rect.top >= 0 && rect.top < window.innerHeight && distanceFromTop < minDistance) {
+            minDistance = distanceFromTop;
+            closestSection = section;
+          }
         }
       });
+  
+      if (closestSection) {
+        setActiveSection(closestSection);
+      }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle navigation with smooth scroll and header offset
   const handleNavClick = (section) => {
     setActiveSection(section);
+
     const target = document.querySelector(section);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+    const headerOffset = 100; // Adjust this value to your header's height
+    const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -131,9 +153,7 @@ const Header = () => {
         />
         <div
           className={`h-1 bg-white rounded-full transition-all duration-300 ease-in-out ${
-            isMenuOpen
-              ? "transform -rotate-45 w-8 -translate-y-2"
-              : "w-6 ml-auto"
+            isMenuOpen ? "transform -rotate-45 w-8 -translate-y-2" : "w-6 ml-auto"
           }`}
         />
       </button>
