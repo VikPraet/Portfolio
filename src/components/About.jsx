@@ -38,7 +38,9 @@ const AboutSection = () => {
 
         {/* Content */}
         <div className="lg:w-2/3">
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
+        <h2 className="text-4xl font-bold mb-4">
+            VIK <span className="text-color-3">PRAET</span> {/* Apply custom color to PRAET */}
+          </h2>
           <p className="text-lg mb-6">
             Hi, I'm Vik Praet, a game and software developer. I have a passion for building digital experiences that merge creativity and technology.
           </p>

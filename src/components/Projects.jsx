@@ -57,7 +57,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-5 px-4 sm:px-6 lg:px-8 z-1">
       <div className="max-w-screen-lg mx-auto">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-left mb-10">Projects</h2>
+        <h2 className="text-4xl font-bold text-left mb-10">PROJECTS</h2>
 
         {/* Featured Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">

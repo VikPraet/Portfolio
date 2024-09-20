@@ -89,7 +89,7 @@ const SkillsSection = () => {
     <section id="skills" className="pb-16 px-4 sm:px-6 lg:px-8 bg-n-8 text-white">
       <div className="max-w-screen-lg mx-auto">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold text-left mb-6">Skills</h2>
+        <h2 className="text-4xl font-bold text-left mb-6">SKILLS</h2>
 
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row gap-8">
