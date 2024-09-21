@@ -4,17 +4,27 @@ import ProjectModal from './ProjectModal'; // Assuming the modal is shared
 // Example additional content with featured boolean
 const additionalContent = [
   {
-    category: '3D Models',
+    category: 'ART & DESIGN',
     items: [
       {
         id: 1,
-        title: 'Model 1',
-        description: 'A 3D model created in Blender.',
-        image: 'https://via.placeholder.com/800x450',
+        title: 'Mars Base Environment',
+        description: 'January 2024',
+        image: '/Projects_Images/Mars_Base_Environment/beautyShot_1.jpg',
         featured: true,
         content: [
-          { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
-          { type: 'text', value: 'This is a detailed description of Model 1.' },
+          { type: 'title', value: 'My 3D Model' },
+          { type: 'text', value: 'This project showcases a Mars base environment I modeled entirely from scratch. Created in Unreal Engine 5, I utilized reusable components—including wall, floor, roof parts, and more—to efficiently design and assemble the scene.' },
+          { type: 'video', src: 'https://www.youtube.com/embed/nUrmIj7-CY8?si=EiGpmRZqsrM6hYMb' },
+          { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1.jpg', size: 'large' },
+          { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1_detail_lighting.jpg', size: 'medium' },
+          { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1_lighting_only.jpg', size: 'medium' },
+          { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1_lighting_only.jpg', size: 'small' },
+          { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1_lighting_only.jpg', size: 'small' },
+          { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1_lighting_only.jpg', size: 'small' },
+      { type: 'sketchfab', src: 'https://sketchfab.com/models/dff30c20efa14f29bf01899ebe45717a/embed?ui_theme=dark' }, // Replace with your Sketchfab model URL
+      { type: 'code', value: 'console.log("Hello World");' },
+
         ],
       },
       {

@@ -6,7 +6,7 @@ const projects = [
     id: 1,
     title: 'Featured Project 1',
     description: 'January 2023',
-    image: './src/assets/beautyShot_1.jpg',
+    image: '/Projects_Images/Mars_Base_Environment/beautyShot_1.jpg',
     featured: true,
     content: [
       { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
@@ -15,7 +15,7 @@ const projects = [
       { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
       { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
       { type: 'text', value: 'This is an in-depth explanation of the project...' },
-      { type: 'image', src: './src/assets/beautyShot_1.jpg', size: 'large' },
+      { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1.jpg', size: 'large' },
       { type: 'code', value: 'console.log("Hello World");' },
     ],
   },
@@ -26,7 +26,8 @@ const projects = [
     image: 'https://via.placeholder.com/800x450',
     featured: true,
     content: [
-      { type: 'video', src: 'https://www.youtube.com/embed/nUrmIj7-CY8?si=EiGpmRZqsrM6hYMb' },
+      { type: 'image', src: './src/assets/beautyShot_1.jpg', size: 'large' },
+      { type: 'sketchfab', src: 'https://sketchfab.com/models/dff30c20efa14f29bf01899ebe45717a/embed?ui_theme=dark' }, // Replace with your Sketchfab model URL
       { type: 'text', value: 'Watch this project demo video and learn more...' },
     ],
   },
