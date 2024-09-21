@@ -74,7 +74,7 @@ console.log('Factorial of', number, 'is', calculateFactorial(number));
     id: 5,
     title: 'Small Project 1',
     description: 'June 2022',
-    image: './src/assets/Apple_Calendar.png',
+    image: 'https://via.placeholder.com/800x450',
     featured: false,
     content: [],
   },
