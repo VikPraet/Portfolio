@@ -4,19 +4,35 @@ import ProjectModal from './ProjectModal'; // Assuming the modal is in the same 
 const projects = [
   {
     id: 1,
-    title: 'Featured Project 1',
-    description: 'January 2023',
-    image: '/Projects_Images/Mars_Base_Environment/beautyShot_1.jpg',
+    title: 'SlipFights',
+    description: 'Unity C#, May 2024',
+    image: '/Projects_Images/SlipFights/SlipFights.png',
     featured: true,
+    links: {
+      itch: 'https://springmarch.itch.io/slip-fights',
+    },
     content: [
-      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
-      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
-      { type: 'image', src: '/Apple_Calendar.png', size: 'small' },
-      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
-      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
-      { type: 'text', value: 'This is an in-depth explanation of the project...' },
-      { type: 'image', src: '/Projects_Images/Mars_Base_Environment/beautyShot_1.jpg', size: 'large' },
-      { type: 'code', value: 'console.log("Hello World");' },
+      { type: 'title', value: 'About the game' },
+      { type: 'text', value: 'SlipFights is a couch-pvp arena shooter in which 4 outlaws duel it out in Cactus Town, the tallest town of the West. But it was hit by a snowstorm the night before! Surely they could figure out a way to not postpone their duel?' },
+      { type: 'text', value: 'Slide around and try to shoot the outlaw on your contract. Completing a contract rewards you with increasing rewards!' },
+      { type: 'text', value: "Beware not to go off the mountain, you won't survive such a fall!" },  
+      
+      { type: 'title', value: 'What i did' },
+      { type: 'text', value: 'As the Gameplay/Technical Programmer, I collaborated with another programmer focused on gameplay and UI.' },
+      { type: 'text', value: 'I implemented the majority of the contract system, managing player interactions and game objectives. Additionally, I worked on the interaction mechanics for obstacles like cacti when players hit them, as well as contributing to the design and functionality of various weapons to enhance the gameplay.' },
+    
+      { type: 'link', platform: 'itch' },
+
+      { type: 'video', src: 'https://www.youtube.com/embed/LVsFR6He3k4?si=CXseVVUMV89NmQwF' },
+      { type: 'image', src: '/Projects_Images/SlipFights/zNbbvw.png', size: 'large' },
+      { type: 'image', src: '/Projects_Images/SlipFights/7NpTyb.png', size: 'medium' },
+      { type: 'image', src: '/Projects_Images/SlipFights/9bMFOd.png', size: 'medium' },
+      { type: 'image', src: '/Projects_Images/SlipFights/BCFT6q.png', size: 'large' },
+      { type: 'image', src: '/Projects_Images/SlipFights/F4Y3qp.png', size: 'medium' },
+      { type: 'image', src: '/Projects_Images/SlipFights/fs2Zhq.png', size: 'medium' },
+      { type: 'image', src: '/Projects_Images/SlipFights/DvCkN9.png', size: 'large' },
+      { type: 'image', src: '/Projects_Images/SlipFights/QHCx8U.png', size: 'medium' },
+      { type: 'image', src: '/Projects_Images/SlipFights/JHddaT.png', size: 'medium' },
     ],
   },
   {
@@ -26,7 +42,7 @@ const projects = [
     image: 'https://via.placeholder.com/800x450',
     featured: true,
     content: [
-      { type: 'image', src: './src/assets/beautyShot_1.jpg', size: 'large' },
+      { type: 'image', src: 'https://via.placeholder.com/800x450jpg', size: 'large' },
       { type: 'sketchfab', src: 'https://sketchfab.com/models/dff30c20efa14f29bf01899ebe45717a/embed?ui_theme=dark' }, // Replace with your Sketchfab model URL
       { type: 'text', value: 'Watch this project demo video and learn more...' },
     ],
