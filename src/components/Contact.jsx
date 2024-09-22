@@ -14,7 +14,7 @@ const socialLinks = [
   },
   {
     name: 'Discord',
-    url: 'https://discord.com/invite/your-invite-link',
+    url: 'https://discord.com/users/414822577324687360',
     icon: <i className="fab fa-discord fa-2x"></i>,
   },
   {
