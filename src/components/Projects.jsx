@@ -12,12 +12,12 @@ const projects = [
       itch: 'https://springmarch.itch.io/slip-fights',
     },
     content: [
-      { type: 'title', value: 'About the game' },
+      { type: 'title', value: 'ABOUT THE GAME' },
       { type: 'text', value: 'SlipFights is a couch-pvp arena shooter in which 4 outlaws duel it out in Cactus Town, the tallest town of the West. But it was hit by a snowstorm the night before! Surely they could figure out a way to not postpone their duel?' },
       { type: 'text', value: 'Slide around and try to shoot the outlaw on your contract. Completing a contract rewards you with increasing rewards!' },
       { type: 'text', value: "Beware not to go off the mountain, you won't survive such a fall!" },  
       
-      { type: 'title', value: 'What i did' },
+      { type: 'title', value: 'WHAT I DID' },
       { type: 'text', value: 'As the Gameplay/Technical Programmer, I collaborated with another programmer focused on gameplay and UI.' },
       { type: 'text', value: 'I implemented the majority of the contract system, managing player interactions and game objectives. Additionally, I worked on the interaction mechanics for obstacles like cacti when players hit them, as well as contributing to the design and functionality of various weapons to enhance the gameplay.' },
     
@@ -37,14 +37,25 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Featured Project 2',
-    description: 'March 2023',
-    image: 'https://via.placeholder.com/800x450',
+    title: 'Galaga',
+    description: 'C++, June 2023',
+    image: '/Projects_Images/Galaga/galaga_cover.png',
     featured: true,
+    links: {
+      github: 'https://github.com/VikPraet/Prog4',
+    },
     content: [
-      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'large' },
-      { type: 'sketchfab', src: 'https://sketchfab.com/models/dff30c20efa14f29bf01899ebe45717a/embed?ui_theme=dark' }, // Replace with your Sketchfab model URL
-      { type: 'text', value: 'Watch this project demo video and learn more...' },
+      { type: 'title', value: 'ABOUT THE GAME' },
+      { type: 'text', value: 'This project is a simple remake of Galaga created using C++. Players control a spaceship positioned at the bottom of the screen, tasked with shooting down waves of enemies that descend from the top.' },
+
+      { type: 'title', value: 'WHAT I DID' },
+      { type: 'text', value: 'In this project, I implemented the core gameplay mechanics within my own simple 2D game engine. This included player controls for maneuvering the spaceship, shooting mechanics, and enemy behavior. I developed a component-based architecture that allows for flexible management of game objects, making it easy to create and modify enemy types. Additionally, I worked on the collision detection system to ensure accurate interactions between the player, projectiles, and enemies.' },
+
+      { type: 'link', platform: 'github' },
+
+      { type: 'image', src: '/Projects_Images/Galaga/Galaga1.gif', size: 'medium' },
+      { type: 'image', src: '/Projects_Images/Galaga/Galaga2.gif', size: 'medium' },
+      { type: 'image', src: '/Projects_Images/Galaga/Galaga3.gif', size: 'large' },
     ],
   },
   {
@@ -53,30 +64,7 @@ const projects = [
     description: 'March 2023',
     image: 'https://via.placeholder.com/800x450',
     featured: true,
-    content: [
-      { type: 'text', value: 'This function calculates the factorial of a number recursively.' },
-      { 
-        type: 'code', 
-        value: `function calculateFactorial(n) {
-  // Check if the number is less than 0
-  if (n < 0) {
-    return 'Factorial is not defined for negative numbers';
-  }
-
-  // Base case: factorial of 0 is 1
-  if (n === 0) {
-    return 1;
-  }
-
-  // Recursive case: n! = n * (n - 1)!
-  return n * calculateFactorial(n - 1);
-}
-
-// Example usage:
-const number = 5;
-console.log('Factorial of', number, 'is', calculateFactorial(number));
-`    },
-    ],
+    content: [],
   },
   {
     id: 4,
