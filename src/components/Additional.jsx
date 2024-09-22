@@ -26,6 +26,7 @@ const additionalContent = [
           { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Mars_Base_Environment/beautyShot_3_lighting_only.jpg`, size: 'medium' },
           { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Mars_Base_Environment/beautyShot_4.jpg`, size: 'large' },
           { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Mars_Base_Environment/beautyShot_4_detail_lighting.jpg`, size: 'medium' },
+          { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Mars_Base_Environment/beautyShot_4_lighting_only.jpg`, size: 'medium' },
           { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Mars_Base_Environment/My_Meshes.jpg`, size: 'large' },
           { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Mars_Base_Environment/My_Textures.jpg`, size: 'large' },
         ],
