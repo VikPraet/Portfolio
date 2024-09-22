@@ -8,7 +8,7 @@ const AboutSection = () => {
         {/* Smaller Image with square aspect ratio */}
         <div className="flex-shrink-0 lg:w-1/4">
           <img 
-            src="./src/assets/Profilepic.jpg" // Replace with your actual image path
+            src="/ProfilePic.jpg" // Replace with your actual image path
             alt="Your Name"
             className="w-full h-auto rounded-lg shadow-lg object-cover"
             style={{ aspectRatio: "1 / 1" }} // Ensure the image is always square
@@ -16,7 +16,7 @@ const AboutSection = () => {
           {/* CV Button */}
           <div className="mt-4 text-center">
             <a 
-              href="./src/assets/CV.pdf" // Link to your CV PDF file
+              href="/CV.pdf" // Link to your CV PDF file
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 text-lg font-medium text-white bg-color-1 hover:bg-color-3 rounded-lg transition duration-300 ease-in-out hover:scale-105"

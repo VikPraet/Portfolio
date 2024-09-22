@@ -65,11 +65,11 @@ const Header = () => {
         onClick={() => handleNavClick("#projects")}
       >
         <img
-          src="./src/assets/vve_t.png" // Replace with the actual image path
+          src="/Portfolio_V.png" // Replace with the actual image path
           alt="Your Name"
-          className="w-12 h-12 object-cover" // No rounding for the image
+          className="w-14 h-14 object-cover" // No rounding for the image
         />
-        <span className="text-2xl font-semibold hover:text-color-3 transition-colors">
+        <span className="text-3xl font-semibold hover:text-color-3 transition-colors">
           Vik Praet
         </span>
       </a>
@@ -78,7 +78,7 @@ const Header = () => {
       <nav className="hidden lg:flex space-x-8">
         <a
           href="#projects"
-          className={`relative text-lg hover:text-color-3 transition-colors duration-300 ${
+          className={`relative text-xl hover:text-color-3 transition-colors duration-300 ${
             activeSection === "#projects" ? "text-color-3" : ""
           }`}
           onClick={() => handleNavClick("#projects")}
@@ -92,7 +92,7 @@ const Header = () => {
         </a>
         <a
           href="#about"
-          className={`relative text-lg hover:text-color-3 transition-colors duration-300 ${
+          className={`relative text-xl hover:text-color-3 transition-colors duration-300 ${
             activeSection === "#about" ? "text-color-3" : ""
           }`}
           onClick={() => handleNavClick("#about")}
@@ -106,7 +106,7 @@ const Header = () => {
         </a>
         <a
           href="#contact"
-          className={`relative text-lg hover:text-color-3 transition-colors duration-300 ${
+          className={`relative text-xl hover:text-color-3 transition-colors duration-300 ${
             activeSection === "#contact" ? "text-color-3" : ""
           }`}
           onClick={() => handleNavClick("#contact")}
@@ -120,7 +120,7 @@ const Header = () => {
         </a>
         <a
           href="#additional"
-          className={`relative text-lg hover:text-color-3 transition-colors duration-300 ${
+          className={`relative text-xl hover:text-color-3 transition-colors duration-300 ${
             activeSection === "#additional" ? "text-color-3" : ""
           }`}
           onClick={() => handleNavClick("#additional")}

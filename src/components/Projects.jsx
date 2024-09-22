@@ -11,7 +11,7 @@ const projects = [
     content: [
       { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
       { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'small' },
-      { type: 'image', src: './src/assets/Apple_Calendar.png', size: 'small' },
+      { type: 'image', src: '/Apple_Calendar.png', size: 'small' },
       { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
       { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'medium' },
       { type: 'text', value: 'This is an in-depth explanation of the project...' },
