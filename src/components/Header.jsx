@@ -65,7 +65,7 @@ const Header = () => {
         onClick={() => handleNavClick("#projects")}
       >
         <img
-          src="/Portfolio_V.png" // Replace with the actual image path
+          src={import.meta.env.BASE_URL + "Portfolio_V.png"} // Correct usage of import.meta.env.BASE_URL
           alt="Your Name"
           className="w-14 h-14 object-cover" // No rounding for the image
         />

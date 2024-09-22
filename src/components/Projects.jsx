@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ProjectModal from './ProjectModal'; // Assuming the modal is in the same folder
 
+
 const projects = [
   {
     id: 1,
     title: 'SlipFights',
     description: 'Unity C#, May 2024',
-    image: '/Projects_Images/SlipFights/SlipFights.png',
+    image: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/SlipFights.png`, // Corrected image path
     featured: true,
     links: {
       itch: 'https://springmarch.itch.io/slip-fights',
@@ -24,22 +25,22 @@ const projects = [
       { type: 'link', platform: 'itch' },
 
       { type: 'video', src: 'https://www.youtube.com/embed/LVsFR6He3k4?si=CXseVVUMV89NmQwF' },
-      { type: 'image', src: '/Projects_Images/SlipFights/zNbbvw.png', size: 'large' },
-      { type: 'image', src: '/Projects_Images/SlipFights/7NpTyb.png', size: 'medium' },
-      { type: 'image', src: '/Projects_Images/SlipFights/9bMFOd.png', size: 'medium' },
-      { type: 'image', src: '/Projects_Images/SlipFights/BCFT6q.png', size: 'large' },
-      { type: 'image', src: '/Projects_Images/SlipFights/F4Y3qp.png', size: 'medium' },
-      { type: 'image', src: '/Projects_Images/SlipFights/fs2Zhq.png', size: 'medium' },
-      { type: 'image', src: '/Projects_Images/SlipFights/DvCkN9.png', size: 'large' },
-      { type: 'image', src: '/Projects_Images/SlipFights/QHCx8U.png', size: 'medium' },
-      { type: 'image', src: '/Projects_Images/SlipFights/JHddaT.png', size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/zNbbvw.png`, size: 'large' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/7NpTyb.png`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/9bMFOd.png`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/BCFT6q.png`, size: 'large' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/F4Y3qp.png`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/fs2Zhq.png`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/DvCkN9.png`, size: 'large' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/QHCx8U.png`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/JHddaT.png`, size: 'medium' },
     ],
   },
   {
     id: 2,
     title: 'Galaga',
     description: 'C++, June 2023',
-    image: '/Projects_Images/Galaga/galaga_cover.png',
+    image: `${import.meta.env.BASE_URL}Projects_Images/Galaga/galaga_cover.png`, // Corrected image path
     featured: true,
     links: {
       github: 'https://github.com/VikPraet/Prog4',
@@ -53,9 +54,9 @@ const projects = [
 
       { type: 'link', platform: 'github' },
 
-      { type: 'image', src: '/Projects_Images/Galaga/Galaga1.gif', size: 'medium' },
-      { type: 'image', src: '/Projects_Images/Galaga/Galaga2.gif', size: 'medium' },
-      { type: 'image', src: '/Projects_Images/Galaga/Galaga3.gif', size: 'large' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga1.gif`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga2.gif`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga3.gif`, size: 'large' },
     ],
   },
   {
