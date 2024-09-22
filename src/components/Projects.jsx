@@ -42,7 +42,7 @@ const projects = [
     image: 'https://via.placeholder.com/800x450',
     featured: true,
     content: [
-      { type: 'image', src: 'https://via.placeholder.com/800x450jpg', size: 'large' },
+      { type: 'image', src: 'https://via.placeholder.com/800x450', size: 'large' },
       { type: 'sketchfab', src: 'https://sketchfab.com/models/dff30c20efa14f29bf01899ebe45717a/embed?ui_theme=dark' }, // Replace with your Sketchfab model URL
       { type: 'text', value: 'Watch this project demo video and learn more...' },
     ],

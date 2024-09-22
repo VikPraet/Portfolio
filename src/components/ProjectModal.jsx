@@ -50,7 +50,7 @@ const ProjectModal = ({ project, onClose }) => {
           <div className={`modal-border-wrapper ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}>
             <div className={`relative bg-n-7 text-n-1 rounded-lg shadow-lg p-8 w-full max-w-5xl mx-auto z-10 modal-content ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`} onClick={(e) => e.stopPropagation()} style={{ minHeight: '300px' }}>
               <button className="absolute top-4 right-4 text-n-3 hover:text-color-3 transition-colors duration-300 text-2xl focus:outline-none" onClick={handleClose}>&#10005;</button>
-              <h2 className="text-3xl font-bold mb-6 text-color-3">{project.title}</h2>
+              <h2 className="text-3xl px-3 font-bold mb-6 text-color-3">{project.title}</h2>
               <div className="space-y-6">
                 {project.content && project.content.map((block, index) => {
                   switch (block.type) {

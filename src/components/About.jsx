@@ -14,12 +14,12 @@ const AboutSection = () => {
             style={{ aspectRatio: "1 / 1" }} // Ensure the image is always square
           />
           {/* CV Button */}
-          <div className="mt-4 text-center">
+          <div className="mt-4">
             <a 
               href="/CV.pdf" // Link to your CV PDF file
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 text-lg font-medium text-white bg-color-1 hover:bg-color-3 rounded-lg transition duration-300 ease-in-out hover:scale-105"
+              className="flex items-center justify-center w-full py-2.5 text-lg font-medium text-white bg-color-1 hover:bg-color-3 rounded-lg transition duration-300 ease-in-out hover:scale-105"
             >
               {/* Adjusted SVG Icon Size */}
               <svg 
@@ -39,7 +39,7 @@ const AboutSection = () => {
 
         {/* Content */}
         <div className="lg:w-2/3">
-        <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl font-bold mb-4">
             VIK <span className="text-color-3">PRAET</span> {/* Apply custom color to PRAET */}
           </h2>
           <p className="text-lg mb-6">
