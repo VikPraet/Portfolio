@@ -75,7 +75,7 @@ const projects = [
       { type: 'subtitle', value: 'Theory Overview' },
       { type: 'text', value: 'Trajectory prediction involves calculating the path of a projectile influenced by forces such as gravity and its interactions with surfaces. This Unity-based simulation enables an interactive exploration of these principles, emphasizing the impact of variables like bounciness and mass on projectile motion.' },
 
-      { type: 'title', value: 'DESIGN/IMPLEMENTATION' },
+      { type: 'title', value: 'DESIGN / IMPLEMENTATION' },
       { type: 'subtitle', value: 'Technology Stack' },
       { type: 'text', value: '- Unity' },
       { type: 'text', value: '- C# scripting' },
@@ -123,7 +123,7 @@ if (Mathf.Abs(distance) <= _radius)
       { type: 'text', value: 'The project effectively simulates and predicts projectile trajectories, demonstrating the impact of varying parameters. The custom physics implementation enhances the accuracy of the simulation.' },
       { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_2.gif`, size: 'large' },
 
-      { type: 'title', value: 'Conclusion/Future Work' },
+      { type: 'title', value: 'Conclusion / Future Work' },
       { type: 'text', value: 'This project demonstrates a practical application of custom physics calculations within Unity for trajectory prediction. The implementation of the PhysicsBall script, particularly the UpdateTrajectoryLine and PredictiveCollisionResponse methods, showcases how physics concepts can be translated into a digital simulation. While the approach is straightforward, it effectively models the trajectory of projectiles and their interactions with surfaces, considering factors like bounciness and mass. Future developments could refine the physics model for greater accuracy or expand the simulation to include more complex scenarios.' },
       { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_1.gif`, size: 'large' },
     ],
