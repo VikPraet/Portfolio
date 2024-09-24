@@ -51,9 +51,9 @@ const ProjectModal = ({ project, onClose }) => {
       ></div>
       <div className="fixed inset-0 z-50 overflow-y-auto">
         <div className="flex items-start justify-center min-h-screen pt-12 pb-12" onClick={handleClose}>
-          <div className={`modal-border-wrapper ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}>
+          <div className={`modal-border-wrapper max-w-[calc(100%-20px)] lg:max-w-5xl ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}>
             <div
-              className={`relative bg-n-7 text-n-1 rounded-lg shadow-lg p-8 w-full max-w-5xl mx-auto z-10 modal-content ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}
+              className={`relative bg-n-7 text-n-1 rounded-lg shadow-lg p-8 w-full mx-auto z-10 modal-content ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}
               onClick={(e) => e.stopPropagation()}
               style={{ minHeight: '300px' }}
             >
@@ -119,7 +119,7 @@ const ProjectModal = ({ project, onClose }) => {
                       case 'code':
                         return (
                           <div key={index} className="px-3">
-                            <pre className={`language-${block.language} bg-n-9 p-4 rounded-md overflow-auto`}>
+                            <pre className={`language-${block.language} bg-n-9 p-4 rounded-md overflow-auto`} style={{ maxWidth: '100%', whiteSpace: 'pre-wrap' }}>
                               <code className={`language-${block.language}`}>{block.value}</code>
                             </pre>
                           </div>
