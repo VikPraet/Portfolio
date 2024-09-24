@@ -61,11 +61,72 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Featured Project 3',
-    description: 'March 2023',
-    image: 'https://via.placeholder.com/800x450',
+    title: 'Trajectory Prediction',
+    description: 'Unity C#, January 2023',
+    image: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
     featured: true,
-    content: [],
+    content: [
+      { type: 'title', value: 'INTRODUCTION' },
+      { type: 'text', value: 'This Unity-based project focuses on simulating and predicting the trajectory of a ball projectile. It combines physics principles with interactive elements, allowing for a dynamic visualization of how different factors, such as bounciness and projectile properties, influence motion.' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`, size: 'large' },
+
+
+      { type: 'title', value: 'DESCRITION OF THE TOPIC' },
+      { type: 'subtitle', value: 'Theory Overview' },
+      { type: 'text', value: 'Trajectory prediction involves calculating the path of a projectile influenced by forces such as gravity and its interactions with surfaces. This Unity-based simulation enables an interactive exploration of these principles, emphasizing the impact of variables like bounciness and mass on projectile motion.' },
+
+      { type: 'title', value: 'DESIGN/IMPLEMENTATION' },
+      { type: 'subtitle', value: 'Technology Stack' },
+      { type: 'text', value: '- Unity' },
+      { type: 'text', value: '- C# scripting' },
+      { type: 'subtitle', value: 'Core Algorithms' },
+      { type: 'text', value: 'The key to trajectory prediction in this project lies within the PhysicsBall script, which embodies the core physics formulas and functions:' },
+      { type: 'text', value: "1. PhysicsBall Script: This script is the heart of trajectory prediction, containing the algorithms that calculate and simulate the projectile's path based on initial launch parameters like velocity, angle, and mass. It factors in physical laws to predict the projectile's motion through space and time." },
+      { type: 'text', value: "2. Cannon Script: This script manages the user's input for setting the initial conditions of the projectile (e.g., launch velocity, angle). It interacts with the PhysicsBall script to initiate the motion based on these inputs." },
+      { type: 'text', value: "3. Wall Script: While not directly involved in trajectory prediction, this script influences the projectile's path post-collision by adjusting bounciness, which affects how the projectile rebounds off surfaces." },
+
+      { type: 'subtitle', value: 'Code Snippets' },
+      { type: 'text', value: 'predicting the position' },
+      { type: 'code',
+        language: 'csharp',
+        value:
+`Vector3 simulatedAcceleration = new Vector3(0, _gravity, 0);
+simulatedVelocity += simulatedAcceleration * Time.deltaTime;
+simulatedPosition += simulatedVelocity * Time.deltaTime;` 
+      },
+      { type: 'text', value: 'handeling collisions' },
+      {
+        type: 'code',
+        language: 'csharp',
+        value: 
+`Plane colliderPlane = new Plane(plane.up, plane.position);
+float distance = colliderPlane.GetDistanceToPoint(position);
+if (Mathf.Abs(distance) <= _radius)
+{
+    float bounciness = plane.GetComponent<Wall>()?.bounciness ?? 0.5f;
+    Vector3 collisionNormal = colliderPlane.normal;
+    velocity = Vector3.Reflect(velocity, collisionNormal);
+    float energyLossFactor = bounciness - 0.05f * _mass;
+    velocity *= energyLossFactor;
+    float penetrationDepth = _radius - Mathf.Abs(distance);
+    if (penetrationDepth > 0)
+    {
+        position += collisionNormal * penetrationDepth;
+    }
+}`
+      },      
+
+      { type: 'subtitle', value: 'Challenges & Solutions' },
+      { type: 'text', value: "Implementing accurate trajectory prediction was challenging within Unity's default physics engine. The solution was to create custom physics within the PhysicsBall script, allowing for precise control over the trajectory calculations and a more accurate simulation." },
+      
+      { type: 'title', value: 'RESULT' },
+      { type: 'text', value: 'The project effectively simulates and predicts projectile trajectories, demonstrating the impact of varying parameters. The custom physics implementation enhances the accuracy of the simulation.' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_2.gif`, size: 'large' },
+
+      { type: 'title', value: 'Conclusion/Future Work' },
+      { type: 'text', value: 'This project demonstrates a practical application of custom physics calculations within Unity for trajectory prediction. The implementation of the PhysicsBall script, particularly the UpdateTrajectoryLine and PredictiveCollisionResponse methods, showcases how physics concepts can be translated into a digital simulation. While the approach is straightforward, it effectively models the trajectory of projectiles and their interactions with surfaces, considering factors like bounciness and mass. Future developments could refine the physics model for greater accuracy or expand the simulation to include more complex scenarios.' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_1.gif`, size: 'large' },
+    ],
   },
   {
     id: 4,
