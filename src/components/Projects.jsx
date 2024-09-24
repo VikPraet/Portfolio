@@ -39,7 +39,7 @@ const projects = [
   {
     id: 2,
     title: 'Galaga',
-    description: 'C++, June 2023',
+    description: 'C++, June 2024',
     image: `${import.meta.env.BASE_URL}Projects_Images/Galaga/galaga_cover.png`, // Corrected image path
     featured: true,
     links: {
@@ -62,7 +62,7 @@ const projects = [
   {
     id: 3,
     title: 'Trajectory Prediction',
-    description: 'Unity C#, January 2023',
+    description: 'Unity C#, January 2024',
     image: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
     featured: true,
     content: [
