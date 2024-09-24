@@ -54,13 +54,7 @@ const ProjectModal = ({ project, onClose }) => {
           {/* Modal Wrapper */}
           <div className={`modal-border-wrapper max-w-[calc(100%-20px)] lg:max-w-5xl ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}>
             <div
-              className={`
-                relative bg-n-7 text-n-1 rounded-lg shadow-lg
-                p-8 sm:p-4
-                w-full mx-auto z-10 modal-content
-                ${isVisible ? 'modal-enter-active' : 'modal-enter'}
-                ${isClosing ? 'modal-exit-active' : ''}
-              `}
+              className={`relative bg-n-7 text-n-1 rounded-lg shadow-lg p-8 w-full mx-auto z-10 modal-content ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}
               onClick={(e) => e.stopPropagation()}
               style={{ minHeight: '300px' }}
             >
