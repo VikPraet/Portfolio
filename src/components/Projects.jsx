@@ -92,10 +92,33 @@ const projects = [
   },
   {
     id: 4,
+    title: 'Instanced Rendering',
+    description: 'Vulkan C++, June 2022',
+    image: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-cover.png`,
+    featured: true,
+    links: {
+      github: 'https://github.com/VikPraet/GP2',
+    },
+    content: [
+      { type: 'title', value: 'ABOUT' },
+      { type: 'text', value: "In this project, I implemented instanced rendering using the Vulkan API, following the official Vulkan Tutorial provided by the Khronos Group. The focus was on optimizing the rendering of multiple objects with similar geometry, which led to improved performance and reduced CPU overhead. Key techniques included instance buffer creation and attribute management, demonstrating Vulkan's capabilities in handling complex rendering tasks. Here are the results." },
+
+      { type: 'link', platform: 'github' },
+
+      { type: 'video', src: `https://www.youtube.com/embed/jXWsziNZcIY?si=KknHBw_XjIuAw-Ol` },
+
+      { type: 'gifVideo', src: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-Video-1.mp4` },
+      { type: 'gifVideo', src: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-Video-2.mp4` },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-1.png`, size: 'large' },
+
+    ],
+  },
+  {
+    id: 5,
     title: 'Trajectory Prediction',
     description: 'Unity C#, January 2024',
     image: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
-    featured: true,
+    featured: false,
     content: [
       { type: 'title', value: 'INTRODUCTION' },
       { type: 'text', value: 'This Unity-based project focuses on simulating and predicting the trajectory of a ball projectile. It combines physics principles with interactive elements, allowing for a dynamic visualization of how different factors, such as bounciness and projectile properties, influence motion.' },
@@ -158,14 +181,6 @@ if (Mathf.Abs(distance) <= _radius)
       { type: 'text', value: 'This project demonstrates a practical application of custom physics calculations within Unity for trajectory prediction. The implementation of the PhysicsBall script, particularly the UpdateTrajectoryLine and PredictiveCollisionResponse methods, showcases how physics concepts can be translated into a digital simulation. While the approach is straightforward, it effectively models the trajectory of projectiles and their interactions with surfaces, considering factors like bounciness and mass. Future developments could refine the physics model for greater accuracy or expand the simulation to include more complex scenarios.' },
       { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_1.gif`, size: 'large' },
     ],
-  },
-  {
-    id: 5,
-    title: 'Small Project 1',
-    description: 'June 2022',
-    image: 'https://via.placeholder.com/800x450',
-    featured: false,
-    content: [],
   },
   {
     id: 6,

@@ -117,6 +117,18 @@ const ProjectModal = ({ project, onClose }) => {
                             </div>
                           </div>
                         );
+                        case 'gifVideo':
+                        return (
+                          <div key={index} className="px-3">
+                            <video
+                              src={block.src}
+                              autoPlay
+                              loop
+                              muted
+                              className="w-full h-auto"
+                            />
+                          </div>
+                        );
                       case 'code':
                         return (
                           <div key={index} className="px-3">
