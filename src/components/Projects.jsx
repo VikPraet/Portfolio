@@ -93,7 +93,7 @@ const projects = [
   {
     id: 4,
     title: 'Instanced Rendering',
-    description: 'Vulkan C++, June 2022',
+    description: 'Vulkan C++, June 2024',
     image: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-cover.png`,
     featured: true,
     links: {
