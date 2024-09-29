@@ -1,13 +1,67 @@
 import React, { useState, useEffect } from 'react';
-import ProjectModal from './ProjectModal'; // Assuming the modal is in the same folder
+import ProjectModal from './ProjectModal';
 
 
 const projects = [
   {
     id: 1,
+    title: 'Halo Zero',
+    description: 'C++, June 2023',
+    image: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-cover.jpg`,
+    featured: true,
+    links: {
+      github: 'https://github.com/VikPraet/Halo-Zero',
+    },
+    content: [
+      { type: 'title', value: 'ABOUT THE GAME' },
+      { type: 'text', value: 'Halo Zero is a fan-made game set in the Halo universe. It features 2D gameplay where players control Master Chief, navigating levels and engaging in combat against Covenant forces. The game aims to replicate the feel of classic Halo titles while incorporating its own elements.' },
+
+      { type: 'title', value: 'WHAT I DID' },
+      { type: 'text', value: "I recreated the first level of Halo Zero, focusing on implementing core gameplay mechanics such as player controls, weapon systems, and enemy behaviors. I utilized a custom framework built with OpenGL and SDL to replicate the feel of the original while ensuring smooth movement and responsive actions." },
+
+      { type: 'link', platform: 'github' },
+
+      { type: 'video', src: `https://www.youtube.com/embed/27FqmTRkNkw?si=B2Yyrr1eIREgZSyw` },
+
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-1.jpg`, size: 'small' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-2.jpg`, size: 'small' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-3.jpg`, size: 'small' },
+
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-7.jpg`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-6.jpg`, size: 'medium' },
+
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-10.jpg`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-12.jpg`, size: 'medium' },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Galaga',
+    description: 'C++, June 2024',
+    image: `${import.meta.env.BASE_URL}Projects_Images/Galaga/galaga_cover.png`,
+    featured: true,
+    links: {
+      github: 'https://github.com/VikPraet/Prog4',
+    },
+    content: [
+      { type: 'title', value: 'ABOUT THE GAME' },
+      { type: 'text', value: 'This project is a simple remake of Galaga created using C++. Players control a spaceship positioned at the bottom of the screen, tasked with shooting down waves of enemies that descend from the top.' },
+
+      { type: 'title', value: 'WHAT I DID' },
+      { type: 'text', value: 'In this project, I implemented the core gameplay mechanics within my own simple 2D game engine. This included player controls for maneuvering the spaceship, shooting mechanics, and enemy behavior. I developed a component-based architecture that allows for flexible management of game objects, making it easy to create and modify enemy types. Additionally, I worked on the collision detection system to ensure accurate interactions between the player, projectiles, and enemies.' },
+
+      { type: 'link', platform: 'github' },
+
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga1.gif`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga2.gif`, size: 'medium' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga3.gif`, size: 'large' },
+    ],
+  },
+  {
+    id: 3,
     title: 'SlipFights',
     description: 'Unity C#, May 2024',
-    image: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/SlipFights.png`, // Corrected image path
+    image: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/SlipFights.png`,
     featured: true,
     links: {
       itch: 'https://springmarch.itch.io/slip-fights',
@@ -37,30 +91,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
-    title: 'Galaga',
-    description: 'C++, June 2024',
-    image: `${import.meta.env.BASE_URL}Projects_Images/Galaga/galaga_cover.png`, // Corrected image path
-    featured: true,
-    links: {
-      github: 'https://github.com/VikPraet/Prog4',
-    },
-    content: [
-      { type: 'title', value: 'ABOUT THE GAME' },
-      { type: 'text', value: 'This project is a simple remake of Galaga created using C++. Players control a spaceship positioned at the bottom of the screen, tasked with shooting down waves of enemies that descend from the top.' },
-
-      { type: 'title', value: 'WHAT I DID' },
-      { type: 'text', value: 'In this project, I implemented the core gameplay mechanics within my own simple 2D game engine. This included player controls for maneuvering the spaceship, shooting mechanics, and enemy behavior. I developed a component-based architecture that allows for flexible management of game objects, making it easy to create and modify enemy types. Additionally, I worked on the collision detection system to ensure accurate interactions between the player, projectiles, and enemies.' },
-
-      { type: 'link', platform: 'github' },
-
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga1.gif`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga2.gif`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga3.gif`, size: 'large' },
-    ],
-  },
-  {
-    id: 3,
+    id: 4,
     title: 'Trajectory Prediction',
     description: 'Unity C#, January 2024',
     image: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
@@ -127,14 +158,6 @@ if (Mathf.Abs(distance) <= _radius)
       { type: 'text', value: 'This project demonstrates a practical application of custom physics calculations within Unity for trajectory prediction. The implementation of the PhysicsBall script, particularly the UpdateTrajectoryLine and PredictiveCollisionResponse methods, showcases how physics concepts can be translated into a digital simulation. While the approach is straightforward, it effectively models the trajectory of projectiles and their interactions with surfaces, considering factors like bounciness and mass. Future developments could refine the physics model for greater accuracy or expand the simulation to include more complex scenarios.' },
       { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_1.gif`, size: 'large' },
     ],
-  },
-  {
-    id: 4,
-    title: 'Featured Project 4',
-    description: 'March 2023',
-    image: 'https://via.placeholder.com/800x450',
-    featured: true,
-    content: [],
   },
   {
     id: 5,
