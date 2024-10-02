@@ -43,9 +43,29 @@ const AboutSection = () => {
             VIK <span className="text-color-3">PRAET</span> {/* Apply custom color to PRAET */}
           </h2>
           <p className="text-lg mb-6">
-          I specialize in programming, with a strong focus on C++, where I build intricate systems, custom engines, and games from scratch. While I enjoy working on independent projects, 
-          I also find it incredibly fulfilling to collaborate within a larger team, contributing my skills to bring ambitious projects to life. 
-          I’m always eager to take on new challenges and push the boundaries of what’s possible in game development, balancing individual creativity with collaborative problem-solving.
+            Ever since I was young, video games have fascinated me. What began as a love for playing evolved into a deep curiosity about how games are made and the mechanics that bring them to life. 
+            Over the years, this curiosity grew into a passion for understanding the technology behind games, which led me to pursue Game Development.
+          </p>
+          <p className="text-lg">
+            Currently, I'm in my third year of{' '}
+            <a
+              href="https://www.digitalartsandentertainment.be/page/31/Game+Development"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-color-3 hover:text-color-1 transition-all duration-200 ease font-bold"
+            >
+              Game Development at Digital Arts and Entertainment
+            </a>{' '}
+            at{' '}
+            <a
+              href="https://www.howest.be/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-color-3 hover:text-color-1 transition-all duration-200 ease font-bold"
+            >
+              Howest University of Applied Sciences
+            </a>.{' '}
+            My focus is on programming, with a particular interest in C++, where I create complex systems, custom engines, and games from the ground up. While I love working on solo projects, I also thrive in collaborative environments, where I can contribute to larger projects. I’m always eager to take on new challenges and push the boundaries of what’s possible in game development.
           </p>
         </div>
       </div>
