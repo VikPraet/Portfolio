@@ -31,9 +31,28 @@ const StartSection = () => {
           developer
         </p>
 
-        {/* Short Introduction to the Portfolio */}
+       {/* Short Introduction to the Portfolio */}
         <p className="mt-4 text-md md:text-lg text-gray-300">
-        Welcome! I’m a game developer with a passion for crafting engaging experiences and solving complex problems. I focus on building dynamic gameplay systems that merge creativity and technology. Take a look around to see what I've been working on!
+          I'm currently in my third year of {' '}
+          <a
+            href="https://www.digitalartsandentertainment.be/page/31/Game+Development"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-color-3 hover:text-color-1 transition-all duration-200 ease font-bold"
+          >
+            Game Development at Digital Arts and Entertainment
+          </a>{' '}
+          at{' '}
+          <a
+            href="https://www.howest.be/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-color-3 hover:text-color-1 transition-all duration-200 ease font-bold"
+          >
+            Howest University of Applied Sciences
+          </a>. 
+          Here, you'll find a selection of my projects, showcasing the skills and creativity I've developed throughout my studies. 
+          Feel free to explore my work, and get a glimpse of the passion I have for game development!
         </p>
       </div>
     </section>

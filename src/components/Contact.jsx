@@ -66,7 +66,7 @@ const ContactSection = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-color-3 transition duration-450 ease transform hover:scale-125"
+              className="text-white hover:text-color-3 transition duration-270 ease-in transform hover:scale-125"
             >
               {link.icon}
             </a>

@@ -43,10 +43,9 @@ const AboutSection = () => {
             VIK <span className="text-color-3">PRAET</span> {/* Apply custom color to PRAET */}
           </h2>
           <p className="text-lg mb-6">
-            Hi, I'm Vik Praet, a game and software developer. I have a passion for building digital experiences that merge creativity and technology.
-          </p>
-          <p className="text-lg">
-            From game design to software solutions, I love solving complex problems and creating seamless, enjoyable projects.
+          I specialize in programming, with a strong focus on C++, where I build intricate systems, custom engines, and games from scratch. While I enjoy working on independent projects, 
+          I also find it incredibly fulfilling to collaborate within a larger team, contributing my skills to bring ambitious projects to life. 
+          I’m always eager to take on new challenges and push the boundaries of what’s possible in game development, balancing individual creativity with collaborative problem-solving.
           </p>
         </div>
       </div>
