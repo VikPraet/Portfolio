@@ -43,11 +43,11 @@ const ContactSection = () => {
             <span className="text-4xl">EMAIL</span>
           </div>
           <a
-            href="mailto:vik.praet@gmail.com"
+            href="mailto:contact@vikpraet.com"
             className="relative text-2xl text-white group hover:text-color-3 transition-colors duration-300 ease-in-out"
             style={{ display: 'inline-block', paddingBottom: '0.5rem' }}
           >
-            vik.praet@gmail.com
+            contact@vikpraet.com
             <span
               className="absolute left-0 bottom-0 h-[2px] bg-color-3 transition-all duration-300 ease-in-out w-0 group-hover:w-full"
             ></span>
