@@ -69,7 +69,7 @@ const additionalContent = [
       {
         id: 2,
         title: 'Procedural Bridges',
-        description: 'Houdini, August 2023',
+        description: 'Houdini, August 2024',
         image: `${import.meta.env.BASE_URL}Projects_Images/Procedural_Bridges/bridge_render.jpg`,
         featured: true,
         content: [
