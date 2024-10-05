@@ -184,9 +184,9 @@ if (Mathf.Abs(distance) <= _radius)
   },
   {
     id: 6,
-    title: 'Small Project 2',
-    description: 'July 2022',
-    image: 'https://via.placeholder.com/800x450',
+    title: 'DirectX 11',
+    description: 'January 2024',
+    image: `${import.meta.env.BASE_URL}Projects_Images/DX11/DX11-cover.png`,
     featured: false,
     content: [],
   },
