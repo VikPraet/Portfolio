@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     title: 'Halo Zero',
     description: 'C++, June 2023',
-    image: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-cover.jpg`,
+    image: `/Projects_Images/Halo-Zero/Halo-Zero-cover.jpg`,
     featured: true,
     links: {
       github: 'https://github.com/VikPraet/Halo-Zero',
@@ -24,22 +24,22 @@ const projects = [
 
       { type: 'video', src: `https://www.youtube.com/embed/27FqmTRkNkw?si=B2Yyrr1eIREgZSyw` },
 
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-1.jpg`, size: 'small' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-2.jpg`, size: 'small' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-3.jpg`, size: 'small' },
+      { type: 'image', src: `/Projects_Images/Halo-Zero/Halo-Zero-1.jpg`, size: 'small' },
+      { type: 'image', src: `/Projects_Images/Halo-Zero/Halo-Zero-2.jpg`, size: 'small' },
+      { type: 'image', src: `/Projects_Images/Halo-Zero/Halo-Zero-3.jpg`, size: 'small' },
 
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-7.jpg`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-6.jpg`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/Halo-Zero/Halo-Zero-7.jpg`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/Halo-Zero/Halo-Zero-6.jpg`, size: 'medium' },
 
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-10.jpg`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Halo-Zero/Halo-Zero-12.jpg`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/Halo-Zero/Halo-Zero-10.jpg`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/Halo-Zero/Halo-Zero-12.jpg`, size: 'medium' },
     ],
   },
   {
     id: 2,
     title: 'Galaga',
     description: 'C++, June 2024',
-    image: `${import.meta.env.BASE_URL}Projects_Images/Galaga/galaga_cover.png`,
+    image: `/Projects_Images/Galaga/galaga_cover.png`,
     featured: true,
     links: {
       github: 'https://github.com/VikPraet/Prog4',
@@ -54,16 +54,16 @@ const projects = [
 
       { type: 'link', platform: 'github' },
 
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga1.gif`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga2.gif`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Galaga/Galaga3.gif`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/Galaga/Galaga1.gif`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/Galaga/Galaga2.gif`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/Galaga/Galaga3.gif`, size: 'large' },
     ],
   },
   {
     id: 3,
     title: 'SlipFights',
     description: 'Unity C#, May 2024',
-    image: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/SlipFights.png`,
+    image: `/Projects_Images/SlipFights/SlipFights.png`,
     featured: true,
     links: {
       itch: 'https://springmarch.itch.io/slip-fights',
@@ -82,22 +82,22 @@ const projects = [
       { type: 'link', platform: 'itch' },
 
       { type: 'video', src: 'https://www.youtube.com/embed/LVsFR6He3k4?si=CXseVVUMV89NmQwF' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/zNbbvw.png`, size: 'large' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/7NpTyb.png`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/9bMFOd.png`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/BCFT6q.png`, size: 'large' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/F4Y3qp.png`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/fs2Zhq.png`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/DvCkN9.png`, size: 'large' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/QHCx8U.png`, size: 'medium' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SlipFights/JHddaT.png`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/SlipFights/zNbbvw.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SlipFights/7NpTyb.png`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/SlipFights/9bMFOd.png`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/SlipFights/BCFT6q.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SlipFights/F4Y3qp.png`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/SlipFights/fs2Zhq.png`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/SlipFights/DvCkN9.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SlipFights/QHCx8U.png`, size: 'medium' },
+      { type: 'image', src: `/Projects_Images/SlipFights/JHddaT.png`, size: 'medium' },
     ],
   },
   {
     id: 4,
     title: 'Instanced Rendering',
     description: 'Vulkan C++, June 2024',
-    image: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-cover.png`,
+    image: `/Projects_Images/Vulkan/Vulkan-cover.png`,
     featured: true,
     links: {
       github: 'https://github.com/VikPraet/GP2',
@@ -111,9 +111,9 @@ const projects = [
 
       { type: 'video', src: `https://www.youtube.com/embed/jXWsziNZcIY?si=KknHBw_XjIuAw-Ol` },
 
-      { type: 'gifVideo', src: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-Video-1.mp4` },
-      { type: 'gifVideo', src: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-Video-2.mp4` },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Vulkan/Vulkan-1.png`, size: 'large' },
+      { type: 'gifVideo', src: `/Projects_Images/Vulkan/Vulkan-Video-1.mp4` },
+      { type: 'gifVideo', src: `/Projects_Images/Vulkan/Vulkan-Video-2.mp4` },
+      { type: 'image', src: `/Projects_Images/Vulkan/Vulkan-1.png`, size: 'large' },
 
     ],
   },
@@ -121,13 +121,13 @@ const projects = [
     id: 5,
     title: 'Trajectory Prediction',
     description: 'Unity C#, January 2024',
-    image: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
+    image: `/Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
     featured: false,
     tags: ['Solo', 'Unity', 'C#'],
     content: [
       { type: 'title', value: 'INTRODUCTION' },
       { type: 'text', value: 'This Unity-based project focuses on simulating and predicting the trajectory of a ball projectile. It combines physics principles with interactive elements, allowing for a dynamic visualization of how different factors, such as bounciness and projectile properties, influence motion.' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/trajectory_prediction/projectile_trajectory_image.png`, size: 'large' },
 
 
       { type: 'title', value: 'DESCRITION OF THE TOPIC' },
@@ -180,18 +180,18 @@ if (Mathf.Abs(distance) <= _radius)
       
       { type: 'title', value: 'RESULT' },
       { type: 'text', value: 'The project effectively simulates and predicts projectile trajectories, demonstrating the impact of varying parameters. The custom physics implementation enhances the accuracy of the simulation.' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_2.gif`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/trajectory_prediction/projectile_trajectory_2.gif`, size: 'large' },
 
       { type: 'title', value: 'Conclusion / Future Work' },
       { type: 'text', value: 'This project demonstrates a practical application of custom physics calculations within Unity for trajectory prediction. The implementation of the PhysicsBall script, particularly the UpdateTrajectoryLine and PredictiveCollisionResponse methods, showcases how physics concepts can be translated into a digital simulation. While the approach is straightforward, it effectively models the trajectory of projectiles and their interactions with surfaces, considering factors like bounciness and mass. Future developments could refine the physics model for greater accuracy or expand the simulation to include more complex scenarios.' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_1.gif`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/trajectory_prediction/projectile_trajectory_1.gif`, size: 'large' },
     ],
   },
   {
     id: 6,
     title: 'DirectX 11',
     description: 'DX11 C++, January 2024',
-    image: `${import.meta.env.BASE_URL}Projects_Images/DX11/DX11-cover.png`,
+    image: `/Projects_Images/DX11/DX11-cover.png`,
     featured: false,
     tags: ['Solo', 'C++', 'DX11'],
     content: [],
@@ -200,13 +200,13 @@ if (Mathf.Abs(distance) <= _radius)
     id: 7,
     title: 'Software Raytracer',
     description: 'C++, November 2023',
-    image: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/SoftwareRaytracer-cover.png`,
+    image: `/Projects_Images/SoftwareRaytracer/SoftwareRaytracer-cover.png`,
     featured: false,
     tags: ['Solo', 'C++'],
     content: [
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/Raytracer_REFERENCE.png`, size: 'large' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/Raytracer_BUNNY.png`, size: 'large' },
-      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/Raytracer_EXTRA.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_REFERENCE.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_BUNNY.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_EXTRA.png`, size: 'large' },
     ],
   },
 ];
