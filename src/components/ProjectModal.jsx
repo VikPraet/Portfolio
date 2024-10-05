@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Prism from 'prismjs'; // For syntax highlighting
 import 'prismjs/components/prism-csharp';  // For C#
+import Tag from './Tag'; // Import the Tag component
 
 const ProjectModal = ({ project, onClose }) => {
   const [isClosing, setIsClosing] = useState(false);
@@ -64,7 +65,19 @@ const ProjectModal = ({ project, onClose }) => {
               >
                 &#10005;
               </button>
+
+              {/* Title */}
               <h2 className="text-3xl px-3 font-bold mb-6 text-color-3">{project.title}</h2>
+
+              {/* Tags Section */}
+              {project.tags && (
+                <div className="px-3 mb-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag, index) => (
+                    <Tag key={index} label={tag} />
+                  ))}
+                </div>
+              )}
+
               <div className="space-y-6">
                 {project.content &&
                   project.content.map((block, index) => {
@@ -117,7 +130,7 @@ const ProjectModal = ({ project, onClose }) => {
                             </div>
                           </div>
                         );
-                        case 'gifVideo':
+                      case 'gifVideo':
                         return (
                           <div key={index} className="px-3">
                             <video

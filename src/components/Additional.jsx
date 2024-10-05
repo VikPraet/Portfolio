@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProjectModal from './ProjectModal'; // Assuming the modal is shared
+import Tag from './Tag'; // Import the Tag component
 
 // Example additional content with featured boolean
 const additionalContent = [
@@ -12,6 +13,7 @@ const additionalContent = [
         description: 'Unreal Engine 5, January 2024',
         image: `${import.meta.env.BASE_URL}Projects_Images/Mars_Base_Environment/beautyShot_1.jpg`,
         featured: true,
+        tags: ['Solo', 'Unreal 5'],
         content: [
           { type: 'text', value: 'This project showcases a Mars base environment I modeled entirely from scratch.' },
           { type: 'video', src: 'https://www.youtube.com/embed/nUrmIj7-CY8?si=EiGpmRZqsrM6hYMb' },
@@ -37,6 +39,7 @@ const additionalContent = [
         description: 'Maya, June 2023',
         image: `${import.meta.env.BASE_URL}Projects_Images/Diorama_by_the_Ocean/1GD12E_Praet_Vik_BeautyShot_00.png`,
         featured: true,
+        tags: ['Solo', 'Maya'],
         content: [
           { type: 'text', value: 'This diorama is inspired by a house in Miami, Florida, and modeled from scratch.' },
           { type: 'sketchfab', src: 'https://sketchfab.com/models/dff30c20efa14f29bf01899ebe45717a/embed?ui_theme=dark' },
@@ -51,6 +54,7 @@ const additionalContent = [
         description: 'Photoshop, January 2023',
         image: `${import.meta.env.BASE_URL}Projects_Images/2D_Art/04_Characters.jpg`,
         featured: true,
+        tags: ['Solo', 'Photoshop'],
         content: [
           { type: 'text', value: 'A selection of various 2D graphics and game art pieces.' },
           { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/2D_Art/01.Styleguide.png`, size: 'large' },
@@ -72,6 +76,7 @@ const additionalContent = [
         description: 'Houdini, August 2024',
         image: `${import.meta.env.BASE_URL}Projects_Images/Procedural_Bridges/bridge_render.jpg`,
         featured: true,
+        tags: ['Solo', 'Houdini'],
         content: [
           { type: 'text', value: 'This project showcases a tool I created in Houdini to generate bridges procedurally.' },
           { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/Procedural_Bridges/bridge_render.jpg`, size: 'large' },
@@ -101,7 +106,7 @@ const AdditionalSection = () => {
 
         {additionalContent.map((category) => (
           <div key={category.category} className="mb-10">
-            {/* Smaller Category Title */}
+            {/* Category Title */}
             <h3 className="text-2xl font-semibold text-left mb-6">{category.category}</h3>
 
             {/* Featured Projects in this category */}
@@ -119,6 +124,14 @@ const AdditionalSection = () => {
                           alt={item.title}
                           className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                         />
+                        {/* Tags Section */}
+                        {item.tags && (
+                          <div className="absolute bottom-0 left-0 w-full p-3 flex flex-wrap gap-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                            {item.tags.map((tag, index) => (
+                              <Tag key={index} label={tag} />
+                            ))}
+                          </div>
+                        )}
                       </div>
                       <div className="p-6">
                         <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
@@ -144,6 +157,14 @@ const AdditionalSection = () => {
                           alt={item.title}
                           className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                         />
+                        {/* Tags Section */}
+                        {item.tags && (
+                          <div className="absolute bottom-0 left-0 w-full p-3 flex flex-wrap gap-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                            {item.tags.map((tag, index) => (
+                              <Tag key={index} label={tag} />
+                            ))}
+                          </div>
+                        )}
                       </div>
                       <div className="p-4">
                         <h3 className="text-xl font-bold mb-1">{item.title}</h3>

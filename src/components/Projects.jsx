@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProjectModal from './ProjectModal';
-
+import Tag from './Tag'; // Import the Tag component
 
 const projects = [
   {
@@ -12,6 +12,7 @@ const projects = [
     links: {
       github: 'https://github.com/VikPraet/Halo-Zero',
     },
+    tags: ['Solo', 'C++', 'OpenGL', 'SDL'],
     content: [
       { type: 'title', value: 'ABOUT THE GAME' },
       { type: 'text', value: 'Halo Zero is a fan-made game set in the Halo universe. It features 2D gameplay where players control Master Chief, navigating levels and engaging in combat against Covenant forces. The game aims to replicate the feel of classic Halo titles while incorporating its own elements.' },
@@ -43,6 +44,7 @@ const projects = [
     links: {
       github: 'https://github.com/VikPraet/Prog4',
     },
+    tags: ['Solo', 'C++', 'Custom Engine'],
     content: [
       { type: 'title', value: 'ABOUT THE GAME' },
       { type: 'text', value: 'This project is a simple remake of Galaga created using C++. Players control a spaceship positioned at the bottom of the screen, tasked with shooting down waves of enemies that descend from the top.' },
@@ -66,6 +68,7 @@ const projects = [
     links: {
       itch: 'https://springmarch.itch.io/slip-fights',
     },
+    tags: ['Team', 'Unity', 'C#'],
     content: [
       { type: 'title', value: 'ABOUT THE GAME' },
       { type: 'text', value: 'SlipFights is a couch-pvp arena shooter in which 4 outlaws duel it out in Cactus Town, the tallest town of the West. But it was hit by a snowstorm the night before! Surely they could figure out a way to not postpone their duel?' },
@@ -99,6 +102,7 @@ const projects = [
     links: {
       github: 'https://github.com/VikPraet/GP2',
     },
+    tags: ['Solo', 'C++', 'Vulkan'],
     content: [
       { type: 'title', value: 'ABOUT' },
       { type: 'text', value: "In this project, I implemented instanced rendering using the Vulkan API, following the official Vulkan Tutorial provided by the Khronos Group. The focus was on optimizing the rendering of multiple objects with similar geometry, which led to improved performance and reduced CPU overhead. Key techniques included instance buffer creation and attribute management, demonstrating Vulkan's capabilities in handling complex rendering tasks. Here are the results." },
@@ -119,6 +123,7 @@ const projects = [
     description: 'Unity C#, January 2024',
     image: `${import.meta.env.BASE_URL}Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
     featured: false,
+    tags: ['Solo', 'Unity', 'C#'],
     content: [
       { type: 'title', value: 'INTRODUCTION' },
       { type: 'text', value: 'This Unity-based project focuses on simulating and predicting the trajectory of a ball projectile. It combines physics principles with interactive elements, allowing for a dynamic visualization of how different factors, such as bounciness and projectile properties, influence motion.' },
@@ -185,18 +190,24 @@ if (Mathf.Abs(distance) <= _radius)
   {
     id: 6,
     title: 'DirectX 11',
-    description: 'January 2024',
+    description: 'DX11 C++, January 2024',
     image: `${import.meta.env.BASE_URL}Projects_Images/DX11/DX11-cover.png`,
     featured: false,
+    tags: ['Solo', 'C++', 'DX11'],
     content: [],
   },
   {
     id: 7,
-    title: 'Small Project 3',
-    description: 'July 2022',
-    image: 'https://via.placeholder.com/800x450',
+    title: 'Software Raytracer',
+    description: 'C++, November 2023',
+    image: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/SoftwareRaytracer-cover.png`,
     featured: false,
-    content: [],
+    tags: ['Solo', 'C++'],
+    content: [
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/Raytracer_REFERENCE.png`, size: 'large' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/Raytracer_BUNNY.png`, size: 'large' },
+      { type: 'image', src: `${import.meta.env.BASE_URL}Projects_Images/SoftwareRaytracer/Raytracer_EXTRA.png`, size: 'large' },
+    ],
   },
 ];
 
@@ -223,17 +234,28 @@ const ProjectsSection = () => {
             .map((project) => (
               <div
                 key={project.id}
-                className="border-container cursor-pointer"
+                className="border-container cursor-pointer relative group"
                 onClick={() => openModal(project)}
               >
-                <div className="relative bg-n-6 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
+                <div className="relative bg-n-6 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2">
+                  
+                  {/* Image Container */}
                   <div className="relative overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                     />
+                    {/* Tags Section Positioned Absolutely - Slide Up on Hover */}
+                    {project.tags && project.tags.length > 0 && (
+                      <div className="absolute bottom-0 left-0 w-full p-3 flex flex-wrap gap-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                        {project.tags.map((tag, index) => (
+                          <Tag key={index} label={tag} />
+                        ))}
+                      </div>
+                    )}
                   </div>
+
                   <div className="p-6">
                     <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                     <p className="text-gray-400">{project.description}</p>
@@ -250,17 +272,27 @@ const ProjectsSection = () => {
             .map((project) => (
               <div
                 key={project.id}
-                className="border-container cursor-pointer"
+                className="border-container cursor-pointer relative group"
                 onClick={() => openModal(project)}
               >
-                <div className="relative bg-n-6 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
+                <div className="relative bg-n-6 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2">
+                  {/* Image Container */}
                   <div className="relative overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                     />
+                    {/* Tags Section Positioned Absolutely - Slide Up on Hover */}
+                    {project.tags && project.tags.length > 0 && (
+                      <div className="absolute bottom-0 left-0 w-full p-3 flex flex-wrap gap-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                        {project.tags.map((tag, index) => (
+                          <Tag key={index} label={tag} />
+                        ))}
+                      </div>
+                    )}
                   </div>
+
                   <div className="p-4">
                     <h3 className="text-xl font-bold mb-1">{project.title}</h3>
                     <p className="text-gray-400">{project.description}</p>
