@@ -16,7 +16,7 @@ const AboutSection = () => {
           {/* CV Button */}
           <div className="mt-4">
             <a 
-              href={`${import.meta.env.BASE_URL}CV.pdf`} // Corrected PDF link
+              href={`${import.meta.env.BASE_URL}CV.pdf?v=2`} // Corrected PDF link
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-full py-2.5 text-lg font-medium text-white bg-color-1 hover:bg-color-3 rounded-lg transition duration-300 ease-in-out hover:scale-105"
