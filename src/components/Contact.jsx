@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const socialLinks = [
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/your-profile',
+    url: 'https://www.linkedin.com/in/vik-praet-216710331/',
     icon: <i className="fab fa-linkedin-in fa-2x"></i>,
   },
   {
