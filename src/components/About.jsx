@@ -42,12 +42,13 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold mb-4">
             VIK <span className="text-color-3">PRAET</span> {/* Apply custom color to PRAET */}
           </h2>
-          <p className="text-lg mb-6">
-            Ever since I was young, video games have fascinated me. What began as a love for playing evolved into a deep curiosity about how games are made and the mechanics that bring them to life. 
-            Over the years, this curiosity grew into a passion for understanding the technology behind games, which led me to pursue Game Development.
+          <p className="text-lg mb-6 font-light">
+          Growing up, I was always around technology. My dad was a programmer, and while I didn’t fully understand what he was doing at the time, his work sparked my curiosity about programming. 
+          At the same time, my love for video games started to grow. It was this combination—my fascination with how things work behind the scenes and my passion for games—that led me toward Game Development. 
+          As I learned more, I began to see how programming could bring ideas to life, and that’s when my interest turned into a full passion for understanding and creating the technology behind games.
           </p>
-          <p className="text-lg">
-            Currently, I'm in my third year of{' '}
+          <p className="text-lg  mb-6 font-light">
+            Now, I’m in my third year of{' '}
             <a
               href="https://www.digitalartsandentertainment.be/page/31/Game+Development"
               target="_blank"
@@ -64,8 +65,14 @@ const AboutSection = () => {
               className="text-color-3 hover:text-color-1 transition-all duration-200 ease font-bold"
             >
               Howest University of Applied Sciences
-            </a>.{' '}
-            My focus is on programming, with a particular interest in C++, where I create complex systems, custom engines, and games from the ground up. While I love working on solo projects, I also thrive in collaborative environments, where I can contribute to larger projects. I’m always eager to take on new challenges and push the boundaries of what’s possible in game development.
+            </a>
+            , with a focus on programming, especially in C++. I enjoy building complex systems, custom engines, and games from scratch. 
+            While I love working on solo projects, I also thrive in collaborative environments where I can contribute to larger projects. 
+            I'm always eager to take on new challenges and push the boundaries of what's possible in game development.
+          </p>
+          <p className="text-lg font-light">
+          As I approach the final stretch of my studies, I’m actively seeking an <span className="font-bold">end-of-study internship</span> from <span className="font-bold">February 2025 to June 2025</span>. 
+          If you’re looking for a dedicated and passionate programmer to join your team, feel free to reach out!
           </p>
         </div>
       </div>
