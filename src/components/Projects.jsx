@@ -61,6 +61,30 @@ const projects = [
   },
   {
     id: 3,
+    title: 'Instanced Rendering',
+    description: 'Vulkan C++, June 2024',
+    image: `/Projects_Images/Vulkan/Vulkan-cover.png`,
+    featured: true,
+    links: {
+      github: 'https://github.com/VikPraet/GP2',
+    },
+    tags: ['Solo', 'C++', 'Vulkan'],
+    content: [
+      { type: 'title', value: 'ABOUT' },
+      { type: 'text', value: "In this project, I implemented instanced rendering using the Vulkan API, following the official Vulkan Tutorial provided by the Khronos Group. The focus was on optimizing the rendering of multiple objects with similar geometry, which led to improved performance and reduced CPU overhead. Key techniques included instance buffer creation and attribute management, demonstrating Vulkan's capabilities in handling complex rendering tasks. Here are the results." },
+
+      { type: 'link', platform: 'github' },
+
+      { type: 'video', src: `https://www.youtube.com/embed/jXWsziNZcIY?si=KknHBw_XjIuAw-Ol` },
+
+      { type: 'gifVideo', src: `/Projects_Images/Vulkan/Vulkan-Video-1.mp4` },
+      { type: 'gifVideo', src: `/Projects_Images/Vulkan/Vulkan-Video-2.mp4` },
+      { type: 'image', src: `/Projects_Images/Vulkan/Vulkan-1.png`, size: 'large' },
+
+    ],
+  },
+  {
+    id: 4,
     title: 'SlipFights',
     description: 'Unity C#, May 2024',
     image: `/Projects_Images/SlipFights/SlipFights.png`,
@@ -94,31 +118,49 @@ const projects = [
     ],
   },
   {
-    id: 4,
-    title: 'Instanced Rendering',
-    description: 'Vulkan C++, June 2024',
-    image: `/Projects_Images/Vulkan/Vulkan-cover.png`,
-    featured: true,
+    id: 5,
+    title: 'DirectX 11',
+    description: 'DX11 C++, January 2024',
+    image: `/Projects_Images/DX11/DX11-cover.png`,
+    featured: false,
     links: {
-      github: 'https://github.com/VikPraet/GP2',
+      github: 'https://github.com/VikPraet/DirectX',
     },
-    tags: ['Solo', 'C++', 'Vulkan'],
+    tags: ['Solo', 'C++', 'DX11'],
     content: [
       { type: 'title', value: 'ABOUT' },
-      { type: 'text', value: "In this project, I implemented instanced rendering using the Vulkan API, following the official Vulkan Tutorial provided by the Khronos Group. The focus was on optimizing the rendering of multiple objects with similar geometry, which led to improved performance and reduced CPU overhead. Key techniques included instance buffer creation and attribute management, demonstrating Vulkan's capabilities in handling complex rendering tasks. Here are the results." },
+      { type: 'text', value: "In this project, I developed a rendering system using the DirectX 11 API, focusing on key material properties. I implemented diffuse textures for base coloring, specular mapping to simulate shiny surfaces, and normal mapping to add detailed surface texture. Additionally, I used alpha testing to manage opacity, ensuring proper rendering of textures with transparent or cutout areas." },
 
       { type: 'link', platform: 'github' },
-
-      { type: 'video', src: `https://www.youtube.com/embed/jXWsziNZcIY?si=KknHBw_XjIuAw-Ol` },
-
-      { type: 'gifVideo', src: `/Projects_Images/Vulkan/Vulkan-Video-1.mp4` },
-      { type: 'gifVideo', src: `/Projects_Images/Vulkan/Vulkan-Video-2.mp4` },
-      { type: 'image', src: `/Projects_Images/Vulkan/Vulkan-1.png`, size: 'large' },
-
+      
+      { type: 'gifVideo', src: `/Projects_Images/DX11/DX11-video-1.mp4` },      
+      { type: 'image', src: `/Projects_Images/DX11/DX11-cover.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/DX11/DX11-1.png`, size: 'large' },
     ],
   },
   {
-    id: 5,
+    id: 6,
+    title: 'Software Raytracer',
+    description: 'C++, November 2023',
+    image: `/Projects_Images/SoftwareRaytracer/SoftwareRaytracer-cover.png`,
+    featured: false,
+    links: {
+      github: 'https://github.com/VikPraet/Ray-Tracer',
+    },
+    tags: ['Solo', 'C++'],
+    content: [
+      { type: 'title', value: 'ABOUT' },
+      { type: 'text', value: "In this project, I developed a basic software raytracer that runs entirely on the CPU, without relying on any graphics APIs. It renders a simple 3D scene, with support for OBJ file loading to include more complex geometry beyond spheres and planes. Although the raytracer runs at non-playable frame rates—expected for a CPU-only implementation—I used multithreading to improve performance by distributing tasks across multiple cores." },
+
+      { type: 'link', platform: 'github' },
+
+      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_REFERENCE.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_BUNNY.png`, size: 'large' },
+      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_EXTRA.png`, size: 'large' },
+    ],
+  },
+  {
+    id: 7,
     title: 'Trajectory Prediction',
     description: 'Unity C#, January 2024',
     image: `/Projects_Images/trajectory_prediction/projectile_trajectory_image.png`,
@@ -185,28 +227,6 @@ if (Mathf.Abs(distance) <= _radius)
       { type: 'title', value: 'Conclusion / Future Work' },
       { type: 'text', value: 'This project demonstrates a practical application of custom physics calculations within Unity for trajectory prediction. The implementation of the PhysicsBall script, particularly the UpdateTrajectoryLine and PredictiveCollisionResponse methods, showcases how physics concepts can be translated into a digital simulation. While the approach is straightforward, it effectively models the trajectory of projectiles and their interactions with surfaces, considering factors like bounciness and mass. Future developments could refine the physics model for greater accuracy or expand the simulation to include more complex scenarios.' },
       { type: 'image', src: `/Projects_Images/trajectory_prediction/projectile_trajectory_1.gif`, size: 'large' },
-    ],
-  },
-  {
-    id: 6,
-    title: 'DirectX 11',
-    description: 'DX11 C++, January 2024',
-    image: `/Projects_Images/DX11/DX11-cover.png`,
-    featured: false,
-    tags: ['Solo', 'C++', 'DX11'],
-    content: [],
-  },
-  {
-    id: 7,
-    title: 'Software Raytracer',
-    description: 'C++, November 2023',
-    image: `/Projects_Images/SoftwareRaytracer/SoftwareRaytracer-cover.png`,
-    featured: false,
-    tags: ['Solo', 'C++'],
-    content: [
-      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_REFERENCE.png`, size: 'large' },
-      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_BUNNY.png`, size: 'large' },
-      { type: 'image', src: `/Projects_Images/SoftwareRaytracer/Raytracer_EXTRA.png`, size: 'large' },
     ],
   },
 ];
