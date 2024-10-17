@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProjectModal from './ProjectModal';
 import Tag from './Tag'; // Import the Tag component
-import MediaWithLoader from './MediaWithLoader'; // Import MediaWithLoader
 
 const projects = [
   {
@@ -260,12 +259,12 @@ const ProjectsSection = () => {
               >
                 <div className="relative bg-n-6 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2">
                   
-                  {/* Image Container with MediaWithLoader */}
+                  {/* Image Container */}
                   <div className="relative overflow-hidden">
-                    <MediaWithLoader
+                    <img
                       src={project.image}
                       alt={project.title}
-                      type="image"
+                      className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                     />
                     {/* Tags Section Positioned Absolutely - Slide Up on Hover */}
                     {project.tags && project.tags.length > 0 && (
@@ -297,12 +296,12 @@ const ProjectsSection = () => {
                 onClick={() => openModal(project)}
               >
                 <div className="relative bg-n-6 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2">
-                  {/* Image Container with MediaWithLoader */}
+                  {/* Image Container */}
                   <div className="relative overflow-hidden">
-                    <MediaWithLoader
+                    <img
                       src={project.image}
                       alt={project.title}
-                      type="image"
+                      className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                     />
                     {/* Tags Section Positioned Absolutely - Slide Up on Hover */}
                     {project.tags && project.tags.length > 0 && (

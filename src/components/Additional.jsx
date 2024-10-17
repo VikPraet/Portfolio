@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ProjectModal from './ProjectModal'; // Assuming the modal is shared
 import Tag from './Tag'; // Import the Tag component
-import MediaWithLoader from './MediaWithLoader'; // Import MediaWithLoader component
 
 // Example additional content with featured boolean
 const additionalContent = [
@@ -119,11 +118,11 @@ const AdditionalSection = () => {
                     {/* Larger card for featured items */}
                     <div className="relative bg-n-6 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
                       <div className="relative overflow-hidden">
-                        {/* Use MediaWithLoader for the image */}
-                        <MediaWithLoader
+                        {/* Image scales when the card is hovered */}
+                        <img
                           src={item.image}
                           alt={item.title}
-                          type="image"
+                          className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                         />
                         {/* Tags Section */}
                         {item.tags && (
@@ -152,11 +151,11 @@ const AdditionalSection = () => {
                     {/* Smaller card for non-featured items */}
                     <div className="relative bg-n-6 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-2 group">
                       <div className="relative overflow-hidden">
-                        {/* Use MediaWithLoader for the image */}
-                        <MediaWithLoader
+                        {/* Image scales when the card is hovered */}
+                        <img
                           src={item.image}
                           alt={item.title}
-                          type="image"
+                          className="w-full h-auto aspect-video object-cover transform transition-transform duration-300 ease-out group-hover:scale-110"
                         />
                         {/* Tags Section */}
                         {item.tags && (

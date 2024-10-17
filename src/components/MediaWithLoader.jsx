@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const MediaWithLoader = ({ src, alt, type }) => {
   const [loading, setLoading] = useState(true);
+
+  // Ensure loading starts immediately when the component mounts
+  useEffect(() => {
+    setLoading(true); // Start loading animation immediately when the component mounts or src changes
+  }, [src]);
 
   const handleLoad = () => setLoading(false);
 
