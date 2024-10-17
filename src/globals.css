@@ -9,6 +9,114 @@
     scroll-margin-top: 120px;
 }
 
+/* Custom developer-style loader: floating { < / > } animation */
+@keyframes float-outer {
+
+    0%,
+    100% {
+        transform: translateX(-20px);
+        /* Move outer curly braces further */
+    }
+
+    50% {
+        transform: translateX(0);
+        /* Return to center */
+    }
+}
+
+@keyframes float-inner {
+
+    0%,
+    100% {
+        transform: translateX(-10px);
+        /* Move inner angle brackets less */
+    }
+
+    50% {
+        transform: translateX(0);
+        /* Return to center */
+    }
+}
+
+@keyframes float-right-inner {
+
+    0%,
+    100% {
+        transform: translateX(10px);
+        /* Move right angle brackets less */
+    }
+
+    50% {
+        transform: translateX(0);
+        /* Return to center */
+    }
+}
+
+@keyframes float-right-outer {
+
+    0%,
+    100% {
+        transform: translateX(20px);
+        /* Move right curly brace further */
+    }
+
+    50% {
+        transform: translateX(0);
+        /* Return to center */
+    }
+}
+
+.developer-loader {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'grotesk', monospace;
+    /* Monospace for coding feel */
+    color: #fff;
+    /* Default color */
+}
+
+.developer-loader span {
+    display: inline-block;
+}
+
+.developer-loader span:nth-child(1) {
+    /* Left curly brace */
+    color: #AC6AFF;
+    animation: float-outer 2.5s ease-in-out infinite;
+    /* Moves the most */
+}
+
+.developer-loader span:nth-child(2) {
+    /* Left angle bracket */
+    color: #CAC6DD;
+    animation: float-inner 2.5s ease-in-out infinite;
+    /* Moves less than curly brace */
+}
+
+.developer-loader span:nth-child(3) {
+    /* Slash */
+    color: #CAC6DD;
+    /* Static slash */
+    animation: none;
+    /* Slash stays static */
+}
+
+.developer-loader span:nth-child(4) {
+    /* Right angle bracket */
+    color: #CAC6DD;
+    animation: float-right-inner 2.5s ease-in-out infinite;
+    /* Moves less than curly brace */
+}
+
+.developer-loader span:nth-child(5) {
+    /* Right curly brace */
+    color: #AC6AFF;
+    animation: float-right-outer 2.5s ease-in-out infinite;
+    /* Moves the most */
+}
+
 
 @keyframes spin {
     from {

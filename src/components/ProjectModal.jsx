@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Prism from 'prismjs'; // For syntax highlighting
-import 'prismjs/components/prism-csharp';  // For C#
-import Tag from './Tag'; // Import the Tag component
+import 'prismjs/components/prism-csharp';  // For C# highlighting
+import MediaWithLoader from './MediaWithLoader'; // Import the MediaWithLoader component
+import Tag from './Tag'; // Import Tag component
 
 const ProjectModal = ({ project, onClose }) => {
   const [isClosing, setIsClosing] = useState(false);
@@ -10,8 +11,9 @@ const ProjectModal = ({ project, onClose }) => {
 
   useEffect(() => {
     document.body.classList.add('overflow-hidden');
-    Prism.highlightAll();
+    Prism.highlightAll(); // Syntax highlighting for code blocks
 
+    // Animate the modal appearing
     setTimeout(() => {
       setShowBackdrop(true);
     }, 10);
@@ -20,6 +22,7 @@ const ProjectModal = ({ project, onClose }) => {
       setIsVisible(true);
     }, 20);
 
+    // Close modal on Escape key press
     const handleEsc = (event) => {
       if (event.key === 'Escape') {
         handleClose();
@@ -46,16 +49,24 @@ const ProjectModal = ({ project, onClose }) => {
 
   return (
     <>
+      {/* Modal backdrop */}
       <div
-        className={`fixed inset-0 z-40 bg-black transition-opacity duration-500 ease-in-out ${showBackdrop ? 'opacity-75' : 'opacity-0'}`}
+        className={`fixed inset-0 z-40 bg-black transition-opacity duration-500 ease-in-out ${
+          showBackdrop ? 'opacity-75' : 'opacity-0'
+        }`}
         onClick={handleClose}
       ></div>
+
+      {/* Modal content */}
       <div className="fixed inset-0 z-50 overflow-y-auto">
         <div className="flex items-start justify-center min-h-screen pt-12 pb-12" onClick={handleClose}>
-          {/* Modal Wrapper */}
-          <div className={`modal-border-wrapper max-w-[calc(100%-20px)] lg:max-w-5xl ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}>
+          <div className={`modal-border-wrapper max-w-[calc(100%-20px)] lg:max-w-5xl ${
+            isVisible ? 'modal-enter-active' : 'modal-enter'
+          } ${isClosing ? 'modal-exit-active' : ''}`}>
             <div
-              className={`relative bg-n-7 text-n-1 rounded-lg shadow-lg p-8 w-full mx-auto z-10 modal-content ${isVisible ? 'modal-enter-active' : 'modal-enter'} ${isClosing ? 'modal-exit-active' : ''}`}
+              className={`relative bg-n-7 text-n-1 rounded-lg shadow-lg p-8 w-full mx-auto z-10 modal-content ${
+                isVisible ? 'modal-enter-active' : 'modal-enter'
+              } ${isClosing ? 'modal-exit-active' : ''}`}
               onClick={(e) => e.stopPropagation()}
               style={{ minHeight: '300px' }}
             >
@@ -66,10 +77,10 @@ const ProjectModal = ({ project, onClose }) => {
                 &#10005;
               </button>
 
-              {/* Title */}
+              {/* Project Title */}
               <h2 className="text-3xl px-3 font-bold mb-6 text-color-3">{project.title}</h2>
 
-              {/* Tags Section */}
+              {/* Project Tags */}
               {project.tags && (
                 <div className="px-3 mb-4 flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
@@ -112,62 +123,30 @@ const ProjectModal = ({ project, onClose }) => {
                                 : 'w-full px-3'
                             }
                           >
-                            <img src={block.src} alt="Project visual" className="rounded-lg shadow-lg w-full h-auto object-cover" />
+                            <MediaWithLoader src={block.src} alt="Project visual" type="image" />
                           </div>
                         );
-                      case 'video':
+                      case 'video': // This now handles both YouTube and local videos
                         return (
                           <div key={index} className="px-3">
-                            <div className="rounded-lg overflow-hidden aspect-w-16 aspect-h-9">
-                              <iframe
-                                title="Project Video"
-                                src={block.src}
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="w-full h-full"
-                              ></iframe>
-                            </div>
+                            <MediaWithLoader src={block.src} type="video" />
                           </div>
                         );
                       case 'gifVideo':
                         return (
                           <div key={index} className="px-3">
-                            <video
-                              src={block.src}
-                              autoPlay
-                              loop
-                              muted
-                              className="w-full h-auto rounded-lg"
-                            />
-                          </div>
-                        );
-                      case 'code':
-                        return (
-                          <div key={index} className="px-3">
-                            <pre className={`language-${block.language} bg-n-9 p-4 rounded-md overflow-auto`} style={{ maxWidth: '100%', whiteSpace: 'pre-wrap' }}>
-                              <code className={`language-${block.language}`}>{block.value}</code>
-                            </pre>
+                            <MediaWithLoader src={block.src} type="gifVideo" />
                           </div>
                         );
                       case 'sketchfab':
                         return (
                           <div key={index} className="px-3">
-                            <div className="rounded-lg overflow-hidden aspect-w-16 aspect-h-9">
-                              <iframe
-                                title="Sketchfab Model"
-                                src={block.src}
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="w-full h-full"
-                              ></iframe>
-                            </div>
+                            <MediaWithLoader src={block.src} type="sketchfab" />
                           </div>
                         );
                       case 'link':
                         return (
-                          <div key={index} className="flex justify-center items-center space-x-2 px-3">
+                          <div key={index} className="flex justify-center items-center space-x-2 col-span-full">
                             {block.platform === 'github' && project.links && project.links.github && (
                               <a
                                 href={project.links.github}
@@ -198,7 +177,7 @@ const ProjectModal = ({ project, onClose }) => {
                         );
                       default:
                         return null;
-                    }
+                      }
                   })}
               </div>
             </div>
