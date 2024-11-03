@@ -138,6 +138,14 @@ const ProjectModal = ({ project, onClose }) => {
                             <MediaWithLoader src={block.src} type="gifVideo" />
                           </div>
                         );
+                        case 'code':
+                        return (
+                          <div key={index} className="px-3">
+                            <pre className={`language-${block.language} bg-n-9 p-4 rounded-md overflow-auto`} style={{ maxWidth: '100%', whiteSpace: 'pre-wrap' }}>
+                              <code className={`language-${block.language}`}>{block.value}</code>
+                            </pre>
+                          </div>
+                        );
                       case 'sketchfab':
                         return (
                           <div key={index} className="px-3">
